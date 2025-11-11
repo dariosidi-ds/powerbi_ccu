@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "POC_CCU"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "350b5ae7-f769-41b3-a4e2-1f33cf14e4aa"
+  }
+}

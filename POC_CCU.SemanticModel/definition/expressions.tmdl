@@ -1,0 +1,120 @@
+expression Parámetro1 = #"Archivo de ejemplo" meta [IsParameterQuery=true, BinaryIdentifier=#"Archivo de ejemplo", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 93be592c-3d6c-4df9-b38e-725892e4b14a
+	queryGroup: 'Transformar archivo de Data_vol\Consultas auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar archivo de ejemplo' =
+		let
+		    Origen = Excel.Workbook(Parámetro1, null, true),
+		    Hoja1_Sheet = Origen{[Item="Hoja1",Kind="Sheet"]}[Data],
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Hoja1_Sheet, [PromoteAllScalars=true])
+		in
+		    #"Encabezados promovidos"
+	lineageTag: 6384a2f3-1691-451e-a371-519810c3875e
+	queryGroup: 'Transformar archivo de Data_vol'
+
+	annotation PBI_ResultType = Table
+
+expression 'Archivo de ejemplo' =
+		let
+		    Origen = Folder.Files("C:\CLIENTES\Semanal\5_CONSOLIDADOS\CERVEZAS\Data_vol_CCU"),
+		    Navegación1 = Origen{0}[Content]
+		in
+		    Navegación1
+	lineageTag: 7495cd46-c9f2-4dda-9bca-b08264c7440e
+	queryGroup: 'Transformar archivo de Data_vol\Consultas auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar archivo' =
+		let
+		    Origen = (Parámetro1 as binary) => let
+		        Origen = Excel.Workbook(Parámetro1, null, true),
+		        Hoja1_Sheet = Origen{[Item="Hoja1",Kind="Sheet"]}[Data],
+		        #"Encabezados promovidos" = Table.PromoteHeaders(Hoja1_Sheet, [PromoteAllScalars=true])
+		    in
+		        #"Encabezados promovidos"
+		in
+		    Origen
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar archivo de ejemplo""}" ]
+	lineageTag: 509f86ed-0fab-4a2a-a31f-de95f0bcab06
+	queryGroup: 'Transformar archivo de Data_vol\Consultas auxiliares'
+
+	annotation PBI_ResultType = Function
+
+expression 'Data_vol Unificado' =
+		let
+		    Origen = Folder.Files("C:\CLIENTES\Semanal\5_CONSOLIDADOS\CERVEZAS\Data_vol"),
+		    #"Archivos ocultos filtrados1" = Table.SelectRows(Origen, each [Attributes]?[Hidden]? <> true),
+		    #"Invocar función personalizada1" = Table.AddColumn(#"Archivos ocultos filtrados1", "Transformar archivo (2)", each #"Transformar archivo (2)"([Content])),
+		    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Invocar función personalizada1", {"Name", "Source.Name"}),
+		    #"Otras columnas quitadas1" = Table.SelectColumns(#"Columnas con nombre cambiado1", {"Source.Name", "Transformar archivo (2)"}),
+		    #"Columna de tabla expandida1" = Table.ExpandTableColumn(#"Otras columnas quitadas1", "Transformar archivo (2)", Table.ColumnNames(#"Transformar archivo (2)"(#"Archivo de ejemplo (2)"))),
+		    #"Tipo cambiado" = Table.TransformColumnTypes(#"Columna de tabla expandida1",{{"Source.Name", type text}, {"Sem hasta", type date}, {"Semana Scentia", Int64.Type}, {"Mes Scentia", Int64.Type}, {"Año Scentia", Int64.Type}, {"Cadena CCU", type text}, {"Categoria", type text}, {"Area Inbev", type any}, {"Zona Inbev", type any}, {"Area_RS_CCU", type text}, {"Gran Area KA CCU", type text}, {"Area KA CCU", type text}, {"Formato M2 2", type any}, {"Formato M2", type text}, {"EAN", Int64.Type}, {"EAN DESC", type text}, {"Peso Volumen", Int64.Type}, {"Contenido", Int64.Type}, {"CANTIDAD", Int64.Type}, {"Venta Valorizada", type number}, {"Volumen_Lts", type number}, {"Pciox vol", type number}, {" pcio por uni ", type number}, {"Cadena", type any}, {"DROP", type any}}),
+		    #"Columnas quitadas" = Table.RemoveColumns(#"Tipo cambiado",{"Sem hasta"}),
+		    #"Columnas con nombre cambiado" = Table.RenameColumns(#"Columnas quitadas",{{"Semana Scentia", "SEMANA"}, {"Mes Scentia", "MES"}, {"Año Scentia", "AÑO"}, {"Cadena CCU", "GRUPO"}, {"Categoria", "CATEGORIA"}}),
+		    #"Columnas quitadas1" = Table.RemoveColumns(#"Columnas con nombre cambiado",{"Area Inbev", "Zona Inbev"}),
+		    #"Columnas con nombre cambiado2" = Table.RenameColumns(#"Columnas quitadas1",{{"Area_RS_CCU", "AREA_CCU"}, {"Gran Area KA CCU", "GranArea_CCU"}, {"Area KA CCU", "SUBAREA_CCU"}}),
+		    #"Columnas quitadas2" = Table.RemoveColumns(#"Columnas con nombre cambiado2",{"Formato M2 2", "Cadena"}),
+		    #"Columnas con nombre cambiado3" = Table.RenameColumns(#"Columnas quitadas2",{{"Formato M2", "Formato_M2"}, {"EAN DESC", "EAN_DESC"}, {"Peso Volumen", "CALIBRE"}, {"Contenido", "CONTENIDO"}, {"CANTIDAD", "Unidades"}, {"Venta Valorizada", "VentaValorizada"}}),
+		    #"Columnas quitadas3" = Table.RemoveColumns(#"Columnas con nombre cambiado3",{" pcio por uni "}),
+		    #"Columnas quitadas4" = Table.RemoveColumns(#"Columnas quitadas3",{"DROP"}),
+		    #"Columnas con nombre cambiado4" = Table.RenameColumns(#"Columnas quitadas4",{{"GRUPO", "BANDERA"}}),
+		    #"Columna condicional agregada" = Table.AddColumn(#"Columnas con nombre cambiado4", "GRUPO", each if [BANDERA] = "JUMBO" then "CENCOSUD" else if [BANDERA] = "DISCO" then "CENCOSUD" else if [BANDERA] = "VEA" then "CENCOSUD" else if [BANDERA] = "SPID35" then "CENCOSUD" else if [BANDERA]="LIBERTAD" then "LIBERTAD" else if [BANDERA]="LA ANONIMA" then "LA ANONIMA" else if [BANDERA]="CARREFOUR" then "CARREFOUR" else if [BANDERA] = "GDN" then "GDN" else if [BANDERA] = "DIA" then "DIA" else if [BANDERA] = "COOP. OBRERA" then "COOP. OBRERA" else if [BANDERA] = "TOLEDO" then "TOLEDO" else [BANDERA]),
+		    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Columna condicional agregada",{{"GRUPO", type text}}),
+		    #"Columnas reordenadas" = Table.ReorderColumns(#"Tipo cambiado1",{"Source.Name", "SEMANA", "MES", "AÑO", "GRUPO", "BANDERA", "CATEGORIA", "AREA_CCU", "GranArea_CCU", "SUBAREA_CCU", "Formato_M2", "EAN", "EAN_DESC", "CALIBRE", "CONTENIDO", "Unidades", "VentaValorizada", "Volumen_Lts", "Pciox vol"}),
+		    #"Filas filtradas1" = Table.SelectRows(#"Columnas reordenadas",each [AÑO] > 2024 or ([AÑO] = 2024 and [MES] >= 2 and [SEMANA]>=7))
+		in
+		    #"Filas filtradas1"
+	lineageTag: 2cda7f4b-31c4-4cd9-9e82-365ce9a743e5
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
+
+expression Parámetro2 = #"Archivo de ejemplo (2)" meta [IsParameterQuery=true, BinaryIdentifier=#"Archivo de ejemplo (2)", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: 2cd3b024-e8bf-4200-8638-769e8ff55b75
+	queryGroup: 'Transformar archivo de Data_vol (2)\Consultas auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar archivo de ejemplo (2)' =
+		let
+		    Origen = Excel.Workbook(Parámetro2, null, true),
+		    Hoja1_Sheet = Origen{[Item="Hoja1",Kind="Sheet"]}[Data],
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Hoja1_Sheet, [PromoteAllScalars=true])
+		in
+		    #"Encabezados promovidos"
+	lineageTag: 4a8ab588-d9d9-4dd7-8555-362d352d5038
+	queryGroup: 'Transformar archivo de Data_vol (2)'
+
+	annotation PBI_ResultType = Table
+
+expression 'Archivo de ejemplo (2)' =
+		let
+		    Origen = Folder.Files("C:\CLIENTES\Semanal\5_CONSOLIDADOS\CERVEZAS\Data_vol"),
+		    Navegación1 = Origen{0}[Content]
+		in
+		    Navegación1
+	lineageTag: ab3790e6-0bf4-4a31-b8c2-be96e82f2f60
+	queryGroup: 'Transformar archivo de Data_vol (2)\Consultas auxiliares'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transformar archivo (2)' =
+		let
+		    Origen = (Parámetro2) => let
+		        Origen = Excel.Workbook(Parámetro2, null, true),
+		        Hoja1_Sheet = Origen{[Item="Hoja1",Kind="Sheet"]}[Data],
+		        #"Encabezados promovidos" = Table.PromoteHeaders(Hoja1_Sheet, [PromoteAllScalars=true])
+		    in
+		        #"Encabezados promovidos"
+		in
+		    Origen
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar archivo de ejemplo (2)""}" ]
+	lineageTag: 8889c796-a147-4da0-8474-a56a78ae64f6
+	queryGroup: 'Transformar archivo de Data_vol (2)\Consultas auxiliares'
+
+	annotation PBI_ResultType = Function
+

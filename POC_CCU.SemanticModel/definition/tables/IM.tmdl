@@ -1,0 +1,121 @@
+table IM
+	lineageTag: 9fa5f679-1edc-424c-977e-52c70f8ba5cb
+
+	column EAN_TEXTO
+		dataType: string
+		lineageTag: dfc13279-b32c-42b3-af21-72cf893ff954
+		sourceColumn: EAN_TEXTO
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column EAN
+		dataType: double
+		isHidden
+		lineageTag: 21bfa668-8486-48e2-a09d-a6f3b1f9e2e2
+		sourceColumn: EAN
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column EAN_DESC
+		dataType: string
+		lineageTag: e57b9a8e-4500-4ca7-a91f-9135990eddc8
+		sourceColumn: EAN_DESC
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Categoria
+		dataType: string
+		lineageTag: 4eb8ed9c-4f4b-459b-b230-0af063e8684c
+		sourceColumn: Categoria
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Calibre
+		dataType: double
+		lineageTag: d972f9fe-0b44-46de-b80c-c245046dd8f2
+		sourceColumn: Calibre
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Contenido
+		dataType: double
+		lineageTag: a95f6471-8b7b-4d3c-87e3-241acc210f18
+		sourceColumn: Contenido
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SIZE
+		dataType: string
+		lineageTag: be633614-3896-4ec0-a9f4-314a5dcab8cd
+		sourceColumn: SIZE
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column MANUF
+		dataType: string
+		lineageTag: 7bea503f-3bc3-47ea-a32b-8042849ecc29
+		sourceColumn: MANUF
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column BRAND
+		dataType: string
+		lineageTag: 62c78f2e-738d-44b6-8180-035e86e7558b
+		sourceColumn: BRAND
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column ENVASE
+		dataType: string
+		lineageTag: 6dc85b0a-5402-4407-a724-8f21f147b871
+		sourceColumn: ENVASE
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column SEGMENTO
+		dataType: string
+		lineageTag: 1543b722-1081-44bd-911e-ec2831013f34
+		sourceColumn: SEGMENTO
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column SUBBRAND
+		dataType: string
+		lineageTag: fe83495c-93e0-4a68-99c9-3b1ae66f97d5
+		sourceColumn: SUBBRAND
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column COLOR
+		dataType: string
+		isHidden
+		lineageTag: c3d5ef54-3a7c-474d-89b5-55e34a883436
+		sourceColumn: COLOR
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column RET_NORET
+		dataType: string
+		lineageTag: fa1225b0-3a63-4ef7-a827-41b240da2019
+		sourceColumn: RET_NORET
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column SEG_LIQUIDO
+		dataType: string
+		lineageTag: 111d23b1-3ebb-432a-add0-6caf84c856de
+		sourceColumn: SEG_LIQUIDO
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	partition IM = m
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\CLIENTES\Semanal\5_CONSOLIDADOS\CERVEZAS\IM.xlsx"), null, true),
+				    Sheet = Source{[Item="IM",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sheet),
+				    #"Renamed Columns" = Table.RenameColumns(#"Promoted Headers", {{"EAN_TEXTO", "EAN_TEXTO"}, {"EAN", "EAN"}, {"EAN_DESC", "EAN_DESC"}, {"Categoria", "Categoria"}, {"Calibre", "Calibre"}, {"Contenido", "Contenido"}, {"SIZE_CCU", "SIZE"}, {"MANUF_CCU", "MANUF"}, {"BRAND_CCU", "BRAND"}, {"ENV_CCU", "ENVASE"}, {"CLASIF_CCU", "SEGMENTO"}, {"SUBBRAND_CCU", "SUBBRAND"}, {"COLOR_CCU", "COLOR"}, {"RET_NORET", "RET_NORET"}, {"SEG_LIQUIDO", "SEG_LIQUIDO"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns", {{"EAN_TEXTO", type text}, {"EAN", type number}, {"EAN_DESC", type text}, {"Categoria", type text}, {"Calibre", type number}, {"Contenido", type number}, {"SIZE", type text}, {"MANUF", type text}, {"BRAND", type text}, {"ENVASE", type text}, {"SEGMENTO", type text}, {"SUBBRAND", type text}, {"COLOR", type text}, {"RET_NORET", type text}, {"SEG_LIQUIDO", type text}})
+				 in
+				    #"Changed Type"
+

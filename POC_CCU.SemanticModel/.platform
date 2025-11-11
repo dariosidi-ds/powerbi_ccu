@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "POC_CCU"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2dd73b87-86d7-4f12-9f02-ab69d7eb5b02"
+  }
+}

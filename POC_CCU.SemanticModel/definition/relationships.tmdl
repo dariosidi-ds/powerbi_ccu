@@ -1,0 +1,4 @@
+relationship c7e23692-0aad-45fb-b608-0887abc662c6
+	fromColumn: Data_vol.EAN
+	toColumn: IM.EAN
+

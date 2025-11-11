@@ -1,0 +1,35 @@
+model Model
+	culture: es-AR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-AR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup 'Transformar archivo de Data_vol'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar archivo de Data_vol\Consultas auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+queryGroup 'Transformar archivo de Data_vol (2)'
+
+	annotation PBI_QueryGroupOrder = 2
+
+queryGroup 'Transformar archivo de Data_vol (2)\Consultas auxiliares'
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Data_vol","Parámetro1","Transformar archivo de ejemplo","Archivo de ejemplo","Transformar archivo","Data_vol Unificado","Parámetro2","Transformar archivo de ejemplo (2)","Archivo de ejemplo (2)","Transformar archivo (2)","IM"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Data_vol
+ref table IM
+
+ref cultureInfo es-AR
+
