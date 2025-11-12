@@ -2,11 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "ecd386147da0e6c9840c",
   "position": {
-    "x": 10,
-    "y": 0,
+    "x": 0,
+    "y": 208.75,
     "z": 0,
-    "height": 280,
-    "width": 455
+    "height": 311.25,
+    "width": 1270,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "tableEx",
@@ -55,10 +56,223 @@
               },
               "queryRef": "IM.BRAND",
               "nativeQueryRef": "BRAND"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calendario"
+                    }
+                  },
+                  "Property": "Ano-Sem_NUM"
+                }
+              },
+              "queryRef": "Sum(Calendario.Año-Sem_NUM)",
+              "nativeQueryRef": "Ano-Sem_NUM"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Data_vol"
+                        }
+                      },
+                      "Property": "Volumen_Lts"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(Data_vol.Volumen_Lts)",
+              "nativeQueryRef": "Suma de Volumen_Lts"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medida"
+                    }
+                  },
+                  "Property": "Volumen Semana Anterior"
+                }
+              },
+              "queryRef": "Medida.Volumen Semana Anterior",
+              "nativeQueryRef": "Volumen Semana Anterior"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medida"
+                    }
+                  },
+                  "Property": "%Var_una_semana"
+                }
+              },
+              "queryRef": "Medida.%Var_una_semana",
+              "nativeQueryRef": "%Var_una_semana"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medida"
+                    }
+                  },
+                  "Property": "Parametro_num"
+                }
+              },
+              "queryRef": "Medida.Parametro_num",
+              "nativeQueryRef": "Parametro_num"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Data_vol"
+                      }
+                    },
+                    "Property": "Volumen_Lts"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
       }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "131.4459738083321D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Data_vol.Volumen_Lts)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "173.99999844298068D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medida.Volumen Semana Anterior"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "88.0000059409216D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IM.BRAND"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "122.74999795899242D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medida.%Var_una_semana"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "113.9999983170453D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Calendario.Año-Sem_NUM)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "93.00000578291836D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IM.SEGMENTO"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "163.5000120725238D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medida.Parametro_num"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "91.74999424727275D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "IM.MANUF"
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   },
@@ -116,6 +330,143 @@
             }
           ]
         }
+      },
+      {
+        "name": "c51ab31d7d86e2c91f49",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "IM"
+              }
+            },
+            "Property": "MANUF"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "52f43ec95845439010eb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "IM"
+              }
+            },
+            "Property": "BRAND"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7e33c4f81c7cb3959bb9",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Data_vol"
+                  }
+                },
+                "Property": "Volumen_Lts"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c971a734b2c41a99262f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Calendario"
+              }
+            },
+            "Property": "Ano-Sem_NUM"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "c",
+              "Entity": "Calendario",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 2,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "c"
+                        }
+                      },
+                      "Property": "Ano-Sem_NUM"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "202543L"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "d28f9a76b651f30f53cb",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medida"
+              }
+            },
+            "Property": "Volumen Semana Anterior"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1ab66154c6ff7b89bbcd",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medida"
+              }
+            },
+            "Property": "%Var_una_semana"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "47cf86656799c0c55aaf",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medida"
+              }
+            },
+            "Property": "Parametro_num"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

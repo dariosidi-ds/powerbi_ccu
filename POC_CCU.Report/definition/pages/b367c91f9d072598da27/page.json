@@ -4,5 +4,20 @@
   "displayName": "Duplicado de Página 2",
   "displayOption": "FitToPage",
   "height": 720,
-  "width": 1280
+  "width": 1280,
+  "objects": {
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "192L"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
 }

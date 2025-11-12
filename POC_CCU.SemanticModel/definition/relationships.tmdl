@@ -12,12 +12,12 @@ relationship 51c8dc86-ee7b-4d67-aa67-de50cb240c88
 	fromColumn: Calendario.Hasta
 	toColumn: LocalDateTable_c12000d8-47bc-46ab-8aa6-9b9619f2c171.Date
 
-relationship 49ad9ce1-a1f7-5fc3-2608-94ac0667359c
-	fromColumn: Data_vol.Sem-Año
-	toColumn: Calendario.Año-Sem
-
-relationship 7d40e3c8-3bc9-4a2b-bc51-3f6cf188beee
+relationship 2855f19c-1407-4b0f-9b45-6751f9b7ba2b
 	joinOnDateBehavior: datePartOnly
 	fromColumn: Calendario.Mes-Año
-	toColumn: LocalDateTable_eff6d163-c17e-4fd6-9feb-263e6d651c26.Date
+	toColumn: LocalDateTable_0496ee4f-8a73-4bb8-aece-580020ff7ffd.Date
+
+relationship da96affb-51ed-d8c5-e933-045821bb556b
+	fromColumn: Data_vol.Año-Sem
+	toColumn: Calendario.Ano-Sem_NUM
 

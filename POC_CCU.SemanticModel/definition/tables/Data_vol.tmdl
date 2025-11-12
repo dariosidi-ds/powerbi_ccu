@@ -244,21 +244,7 @@ table Data_vol
 
 		annotation SummarizationSetBy = Automatic
 
-	column Fecha_Combinada =
-			
-			VAR Ano = Data_vol[AÑO]
-			VAR Mes = Data_vol[MES]
-			VAR Semana = Data_vol[SEMANA]
-			VAR PrimerDiaMes = DATE(Ano, Mes, 1)
-			RETURN
-			    PrimerDiaMes + (Semana - 1) * 7
-		formatString: General Date
-		lineageTag: 8684a48c-4020-4c5c-870f-54234e9b9c3c
-		summarizeBy: none
-
-		annotation SummarizationSetBy = Automatic
-
-	column Sem-Año = Data_Vol[Semana]&"-"& Data_Vol[Año]
+	column Año-Sem = CONCATENATE(Data_Vol[Año],Data_Vol[Semana])
 		lineageTag: 15ceab20-345e-4f69-8156-25c46adb89aa
 		summarizeBy: none
 

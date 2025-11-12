@@ -70,33 +70,17 @@ table Calendario
 		annotation SummarizationSetBy = Automatic
 
 	column Año-Sem = 'Calendario'[Nro Semana]&"-"&'Calendario'[Año]
+		dataType: string
 		lineageTag: 747347ad-4280-48e7-a8fe-92d85fe91bf1
 		summarizeBy: none
-
-		annotation SummarizationSetBy = Automatic
-
-	column Mes-Año =
-			
-			FORMAT(Calendario[mes], "00") & "-" & FORMAT(Calendario[Año], "0000")
-		dataType: dateTime
-		formatString: Long Date
-		lineageTag: d759e928-e7a6-4487-9aa6-6f86d9204202
-		summarizeBy: none
-
-		variation Variación
-			isDefault
-			relationship: 7d40e3c8-3bc9-4a2b-bc51-3f6cf188beee
-			defaultHierarchy: LocalDateTable_eff6d163-c17e-4fd6-9feb-263e6d651c26.'Jerarquía de fechas'
 
 		changedProperty = DataType
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation UnderlyingDateTimeDataType = Date
-
 	column 'Meses de diferencia' = datediff(max(Data_vol[mes-año]),Calendario[Mes-Año],MONTH)
 		lineageTag: 8c10a08b-83ac-45df-8ec7-5ae02b341581
-		summarizeBy: none
+		summarizeBy: sum
 
 		annotation SummarizationSetBy = Automatic
 
@@ -108,11 +92,40 @@ table Calendario
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	column Mes-Año =
+			
+			FORMAT(Calendario[mes], "00") & "-" & FORMAT(Calendario[Año], "0000")
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 6497f245-fcb5-4ded-b29b-90915c129c57
+		summarizeBy: none
+
+		variation Variación
+			isDefault
+			relationship: 2855f19c-1407-4b0f-9b45-6751f9b7ba2b
+			defaultHierarchy: LocalDateTable_0496ee4f-8a73-4bb8-aece-580020ff7ffd.'Jerarquía de fechas'
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Ano-Sem_NUM = CONCATENATE('Calendario'[Año],'Calendario'[Nro Semana])
+		dataType: int64
+		formatString: 0
+		lineageTag: deb727cf-95bb-4b54-b0b2-d874bf27b0cd
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
 	hierarchy 'Mes-Año Jerarquía'
-		lineageTag: da15c755-2412-45c8-8eb8-7d0a69261edd
+		lineageTag: 191d2cc6-ed96-4d83-b65c-2546065756c5
 
 		level Mes-Año
-			lineageTag: 5419a62a-30d5-4825-a497-500c14c2c54c
+			lineageTag: edde3a3e-e9a7-4a71-a672-ee253962550f
 			column: Mes-Año
 
 	partition Calendario = m

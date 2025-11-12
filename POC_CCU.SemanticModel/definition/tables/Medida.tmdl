@@ -13,8 +13,34 @@ table Medida
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure Max_Fecha = MAX(Data_vol[Fecha_Combinada])
-		lineageTag: e7ae5c03-41de-43e6-959d-e7f6245ef170
+	measure 'Volumen Semana Anterior' = ```
+			
+			VAR SemanaActual = MAX(Calendario[Ano-Sem_NUM])
+			VAR SemanaAnterior = SemanaActual - 1
+			RETURN 
+			CALCULATE(SUM(Data_vol[Volumen_Lts] ),Calendario[Ano-Sem_NUM]=SemanaAnterior
+			)
+			
+			
+			```
+		lineageTag: df1fff0c-c0d0-486a-bbfa-f6ff65650aca
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure %Var_una_semana = ```
+			
+			 DIVIDE([Suma de Volumen_Lts]-[Volumen Semana Anterior],[Volumen Semana Anterior],0)
+			```
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 84672915-05c3-4d87-ba21-d1ac212d39e5
+
+	measure Parametro_num =
+			
+			VAR variacion=[%Var_una_semana]<0.5
+			
+			RETURN IF(variacion,1,0)
+		formatString: 0
+		lineageTag: 6f09401b-c948-40f0-863b-08f84fddeb8a
 
 	partition Medida = m
 		mode: import
