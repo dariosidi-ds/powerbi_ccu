@@ -18,7 +18,7 @@ expression 'Transformar archivo de ejemplo' =
 
 expression 'Archivo de ejemplo' =
 		let
-		    Origen = Folder.Files("C:\CLIENTES\Semanal\5_CONSOLIDADOS\CERVEZAS\Data_vol_CCU"),
+		    Origen = Folder.Files("C:\Users\Dario Sidi\Downloads\wetransfer_data_vol-zip_2025-11-11_1209\Data_vol\Data_vol_CCU"),
 		    Navegación1 = Origen{0}[Content]
 		in
 		    Navegación1
@@ -27,14 +27,16 @@ expression 'Archivo de ejemplo' =
 
 	annotation PBI_ResultType = Binary
 
+	annotation PBI_NavigationStepName = Navegación
+
 expression 'Transformar archivo' =
 		let
 		    Origen = (Parámetro1 as binary) => let
-		        Origen = Excel.Workbook(Parámetro1, null, true),
-		        Hoja1_Sheet = Origen{[Item="Hoja1",Kind="Sheet"]}[Data],
-		        #"Encabezados promovidos" = Table.PromoteHeaders(Hoja1_Sheet, [PromoteAllScalars=true])
-		    in
-		        #"Encabezados promovidos"
+		    Origen = Excel.Workbook(Parámetro1, null, true),
+		    Hoja1_Sheet = Origen{[Item="Hoja1",Kind="Sheet"]}[Data],
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Hoja1_Sheet, [PromoteAllScalars=true])
+		in
+		    #"Encabezados promovidos"
 		in
 		    Origen
 	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar archivo de ejemplo""}" ]
@@ -45,7 +47,7 @@ expression 'Transformar archivo' =
 
 expression 'Data_vol Unificado' =
 		let
-		    Origen = Folder.Files("C:\CLIENTES\Semanal\5_CONSOLIDADOS\CERVEZAS\Data_vol"),
+		    Origen = Folder.Files("C:\Users\Dario Sidi\Downloads\wetransfer_data_vol-zip_2025-11-11_1209\Data_vol\Data_vol"),
 		    #"Archivos ocultos filtrados1" = Table.SelectRows(Origen, each [Attributes]?[Hidden]? <> true),
 		    #"Invocar función personalizada1" = Table.AddColumn(#"Archivos ocultos filtrados1", "Transformar archivo (2)", each #"Transformar archivo (2)"([Content])),
 		    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Invocar función personalizada1", {"Name", "Source.Name"}),
@@ -93,7 +95,7 @@ expression 'Transformar archivo de ejemplo (2)' =
 
 expression 'Archivo de ejemplo (2)' =
 		let
-		    Origen = Folder.Files("C:\CLIENTES\Semanal\5_CONSOLIDADOS\CERVEZAS\Data_vol"),
+		    Origen = Folder.Files("C:\Users\Dario Sidi\Downloads\wetransfer_data_vol-zip_2025-11-11_1209\Data_vol\Data_vol"),
 		    Navegación1 = Origen{0}[Content]
 		in
 		    Navegación1
@@ -104,12 +106,12 @@ expression 'Archivo de ejemplo (2)' =
 
 expression 'Transformar archivo (2)' =
 		let
-		    Origen = (Parámetro2) => let
-		        Origen = Excel.Workbook(Parámetro2, null, true),
-		        Hoja1_Sheet = Origen{[Item="Hoja1",Kind="Sheet"]}[Data],
-		        #"Encabezados promovidos" = Table.PromoteHeaders(Hoja1_Sheet, [PromoteAllScalars=true])
-		    in
-		        #"Encabezados promovidos"
+		    Origen = (Parámetro2 as binary) => let
+		    Origen = Excel.Workbook(Parámetro2, null, true),
+		    Hoja1_Sheet = Origen{[Item="Hoja1",Kind="Sheet"]}[Data],
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Hoja1_Sheet, [PromoteAllScalars=true])
+		in
+		    #"Encabezados promovidos"
 		in
 		    Origen
 	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar archivo de ejemplo (2)""}" ]

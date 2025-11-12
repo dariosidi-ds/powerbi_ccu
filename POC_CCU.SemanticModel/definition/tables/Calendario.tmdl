@@ -1,0 +1,132 @@
+table Calendario
+	lineageTag: bf227c44-d8a9-4920-a736-2f8716870c47
+
+	column Mes
+		dataType: int64
+		formatString: 0
+		lineageTag: 33ccb409-fa06-44ea-8a10-74224e41e122
+		summarizeBy: sum
+		sourceColumn: Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column Año
+		dataType: int64
+		formatString: 0
+		lineageTag: 78a8b87e-492d-4f59-a356-6ad1471842cc
+		summarizeBy: sum
+		sourceColumn: Año
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nro Semana'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3500bc29-eaf4-4cc8-9a87-2c992411aada
+		summarizeBy: sum
+		sourceColumn: Nro Semana
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2e31711e-b73c-41a4-b873-6fd123ef0166
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variación
+			isDefault
+			relationship: 117de992-8e97-485d-976f-e9864e0f7b3b
+			defaultHierarchy: LocalDateTable_070bbef8-dad1-41f8-bfab-88dc37271cac.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Hasta
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 892ed83a-9323-43f2-9bdd-9af64d4d9602
+		summarizeBy: none
+		sourceColumn: Hasta
+
+		variation Variación
+			isDefault
+			relationship: 51c8dc86-ee7b-4d67-aa67-de50cb240c88
+			defaultHierarchy: LocalDateTable_c12000d8-47bc-46ab-8aa6-9b9619f2c171.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Sem ref'
+		dataType: int64
+		formatString: 0
+		lineageTag: b125169f-a3e4-4e39-9cb0-faece3cf535b
+		summarizeBy: sum
+		sourceColumn: Sem ref
+
+		annotation SummarizationSetBy = Automatic
+
+	column Año-Sem = 'Calendario'[Nro Semana]&"-"&'Calendario'[Año]
+		lineageTag: 747347ad-4280-48e7-a8fe-92d85fe91bf1
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes-Año =
+			
+			FORMAT(Calendario[mes], "00") & "-" & FORMAT(Calendario[Año], "0000")
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: d759e928-e7a6-4487-9aa6-6f86d9204202
+		summarizeBy: none
+
+		variation Variación
+			isDefault
+			relationship: 7d40e3c8-3bc9-4a2b-bc51-3f6cf188beee
+			defaultHierarchy: LocalDateTable_eff6d163-c17e-4fd6-9feb-263e6d651c26.'Jerarquía de fechas'
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Meses de diferencia' = datediff(max(Data_vol[mes-año]),Calendario[Mes-Año],MONTH)
+		lineageTag: 8c10a08b-83ac-45df-8ec7-5ae02b341581
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Semanas de dif' = (max(Data_vol[Date])-Calendario[Date])/-7
+		lineageTag: 78d6b0b1-0e58-4685-b621-8c9e5e43abdb
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	hierarchy 'Mes-Año Jerarquía'
+		lineageTag: da15c755-2412-45c8-8eb8-7d0a69261edd
+
+		level Mes-Año
+			lineageTag: 5419a62a-30d5-4825-a497-500c14c2c54c
+			column: Mes-Año
+
+	partition Calendario = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\Dario Sidi\Downloads\Calendario CCU.xlsx"), null, true),
+				    Hoja1_Sheet = Origen{[Item="Hoja1",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Hoja1_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"Mes", Int64.Type}, {"Año", Int64.Type}, {"Nro Semana", Int64.Type}, {"Date", type date}, {"Hasta", type date}, {"Sem ref", Int64.Type}})
+				in
+				    #"Tipo cambiado"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

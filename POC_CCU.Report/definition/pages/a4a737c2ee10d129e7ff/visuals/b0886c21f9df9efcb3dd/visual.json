@@ -1,0 +1,115 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "b0886c21f9df9efcb3dd",
+  "position": {
+    "x": 713.75,
+    "y": 230,
+    "z": 2000,
+    "height": 430,
+    "width": 466.25,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "barChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Data_vol"
+                    }
+                  },
+                  "Property": "GRUPO"
+                }
+              },
+              "queryRef": "Data_vol.GRUPO",
+              "nativeQueryRef": "GRUPO",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Arithmetic": {
+                  "Left": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Data_vol"
+                        }
+                      },
+                      "Property": "Suma de Volumen_Lts"
+                    }
+                  },
+                  "Right": {
+                    "ScopedEval": {
+                      "Expression": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Data_vol"
+                            }
+                          },
+                          "Property": "Suma de Volumen_Lts"
+                        }
+                      },
+                      "Scope": []
+                    }
+                  },
+                  "Operator": 3
+                }
+              },
+              "queryRef": "Data_vol.Suma de Volumen_Lts",
+              "nativeQueryRef": "%TG Suma de Volumen_Lts"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Arithmetic": {
+                "Left": {
+                  "Measure": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Data_vol"
+                      }
+                    },
+                    "Property": "Suma de Volumen_Lts"
+                  }
+                },
+                "Right": {
+                  "ScopedEval": {
+                    "Expression": {
+                      "Measure": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Data_vol"
+                          }
+                        },
+                        "Property": "Suma de Volumen_Lts"
+                      }
+                    },
+                    "Scope": []
+                  }
+                },
+                "Operator": 3
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

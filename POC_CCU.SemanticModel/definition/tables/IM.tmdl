@@ -44,10 +44,10 @@ table IM
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column SIZE
+	column SIZE_CCU
 		dataType: string
 		lineageTag: be633614-3896-4ec0-a9f4-314a5dcab8cd
-		sourceColumn: SIZE
+		sourceColumn: SIZE_CCU
 
 		annotation PBI_FormatHint = {"isText":true}
 
@@ -108,14 +108,90 @@ table IM
 
 		annotation PBI_FormatHint = {"isText":true}
 
+	column 'Manuf 2'
+		dataType: string
+		lineageTag: 7bed4831-cbdb-458c-b064-8a746a2cbe4e
+		summarizeBy: none
+		sourceColumn: Manuf
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Brand 2'
+		dataType: string
+		lineageTag: b886383b-f471-4879-ac92-84606fe7257e
+		summarizeBy: none
+		sourceColumn: Brand
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Envase 2'
+		dataType: string
+		lineageTag: 0536cae6-84df-4404-95ee-00585f4a68a7
+		summarizeBy: none
+		sourceColumn: Envase
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLAS_INBEV
+		dataType: string
+		lineageTag: ff74493b-fa9b-49ac-ae0b-cc5e42168694
+		summarizeBy: none
+		sourceColumn: CLAS_INBEV
+
+		annotation SummarizationSetBy = Automatic
+
+	column SUBBRAND_INBEV
+		dataType: string
+		lineageTag: e4c518d4-bf5d-404a-9f66-2fa732d17bb2
+		summarizeBy: none
+		sourceColumn: SUBBRAND_INBEV
+
+		annotation SummarizationSetBy = Automatic
+
+	column DESC_2
+		dataType: string
+		lineageTag: fa6e6e9e-1c8a-4f4e-b4b6-26c3f291563d
+		summarizeBy: none
+		sourceColumn: DESC_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column TIPO_ENV
+		dataType: string
+		lineageTag: 48ed35fb-2e09-4ad0-80a3-88336446c8f2
+		summarizeBy: none
+		sourceColumn: TIPO_ENV
+
+		annotation SummarizationSetBy = Automatic
+
+	column SIZE
+		dataType: string
+		lineageTag: c4dc9cc3-e3fa-406d-bfdb-5ba56a03f70a
+		summarizeBy: none
+		sourceColumn: SIZE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ALCOHOL
+		dataType: string
+		lineageTag: eb661a90-a287-44d5-8cbb-31db8f9e8bd2
+		summarizeBy: none
+		sourceColumn: ALCOHOL
+
+		annotation SummarizationSetBy = Automatic
+
 	partition IM = m
 		source =
 				let
-				    Source = Excel.Workbook(File.Contents("C:\CLIENTES\Semanal\5_CONSOLIDADOS\CERVEZAS\IM.xlsx"), null, true),
+				    Source = Excel.Workbook(File.Contents("C:\Users\Dario Sidi\Downloads\wetransfer_data_vol-zip_2025-11-11_1209\IM.xlsx"), null, true),
 				    Sheet = Source{[Item="IM",Kind="Sheet"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(Sheet),
-				    #"Renamed Columns" = Table.RenameColumns(#"Promoted Headers", {{"EAN_TEXTO", "EAN_TEXTO"}, {"EAN", "EAN"}, {"EAN_DESC", "EAN_DESC"}, {"Categoria", "Categoria"}, {"Calibre", "Calibre"}, {"Contenido", "Contenido"}, {"SIZE_CCU", "SIZE"}, {"MANUF_CCU", "MANUF"}, {"BRAND_CCU", "BRAND"}, {"ENV_CCU", "ENVASE"}, {"CLASIF_CCU", "SEGMENTO"}, {"SUBBRAND_CCU", "SUBBRAND"}, {"COLOR_CCU", "COLOR"}, {"RET_NORET", "RET_NORET"}, {"SEG_LIQUIDO", "SEG_LIQUIDO"}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Promoted Headers", {{"EAN_TEXTO", "EAN_TEXTO"}, {"EAN", "EAN"}, {"EAN_DESC", "EAN_DESC"}, {"Categoria", "Categoria"}, {"Calibre", "Calibre"}, {"Contenido", "Contenido"}, {"MANUF_CCU", "MANUF"}, {"BRAND_CCU", "BRAND"}, {"ENV_CCU", "ENVASE"}, {"CLASIF_CCU", "SEGMENTO"}, {"SUBBRAND_CCU", "SUBBRAND"}, {"COLOR_CCU", "COLOR"}, {"RET_NORET", "RET_NORET"}, {"SEG_LIQUIDO", "SEG_LIQUIDO"}}),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns", {{"EAN_TEXTO", type text}, {"EAN", type number}, {"EAN_DESC", type text}, {"Categoria", type text}, {"Calibre", type number}, {"Contenido", type number}, {"SIZE", type text}, {"MANUF", type text}, {"BRAND", type text}, {"ENVASE", type text}, {"SEGMENTO", type text}, {"SUBBRAND", type text}, {"COLOR", type text}, {"RET_NORET", type text}, {"SEG_LIQUIDO", type text}})
 				 in
 				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
 

@@ -2,11 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "08e3aaa107c9627d6bcd",
   "position": {
-    "x": 9.6055210305030236,
+    "x": 9.78266061619298,
     "y": 0,
     "z": 0,
-    "height": 463.80944404428885,
-    "width": 1101.8904839277041
+    "height": 182.20205397659421,
+    "width": 1101.7721518987341,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "tableEx",
@@ -60,24 +61,42 @@
         }
       }
     },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "145.26988297110103D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Data_vol.SEMANA)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "121.38956092136709D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(Data_vol.MES)"
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
-      {
-        "name": "25bf7ae15e63ccadf262",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Data_vol"
-              }
-            },
-            "Property": "SEMANA"
-          }
-        },
-        "type": "Advanced"
-      },
       {
         "name": "974a00466da439563b44",
         "field": {

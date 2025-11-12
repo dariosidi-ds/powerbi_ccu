@@ -4,148 +4,284 @@ table Data_vol
 	measure Pcio_Lt = sum('Data_vol'[VentaValorizada])/sum(Data_vol[Volumen_Lts])
 		lineageTag: 0edd1a16-5b59-4f06-8a9e-a561685b434d
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure Pcio_Uni = sum('Data_vol'[VentaValorizada])/sum(Data_vol[Unidades])
 		lineageTag: 87fdb01f-9a49-4a01-af5e-7aafaf9c1557
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Suma de Volumen_Lts' = SUM('Data_vol'[Volumen_Lts])
 		lineageTag: d20652c8-b684-4b66-be18-4f7c389294ed
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Suma de VentaValorizada' = SUM('Data_vol'[VentaValorizada])
 		lineageTag: 3b78ed33-036d-4b09-a01c-a324641b0e86
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Suma de Unidades' = SUM('Data_vol'[Unidades])
 		lineageTag: 2972d277-31bd-499c-a6af-3dd30f0cb33f
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column 'Source.Name'
 		dataType: string
-		isHidden
 		lineageTag: 43e4c1b2-cee3-47f7-a671-321a1ec888a4
+		summarizeBy: none
 		sourceColumn: Source.Name
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isText":true}
+
+		annotation SummarizationSetBy = Automatic
 
 	column SEMANA
 		dataType: int64
 		lineageTag: e9098e37-d681-4bc7-ad1d-cf8aa4392095
+		summarizeBy: sum
 		sourceColumn: SEMANA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
 
 	column MES
 		dataType: int64
 		lineageTag: d8cf7406-103f-4aa9-b1e5-8efe65344b4e
+		summarizeBy: sum
 		sourceColumn: MES
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
 
 	column AÑO
 		dataType: int64
 		lineageTag: 5cc8bba5-9df6-4a9c-bc78-5f7d5465fc2b
+		summarizeBy: sum
 		sourceColumn: AÑO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
 
 	column BANDERA
 		dataType: string
 		lineageTag: 383dc586-5fcf-4861-8b6b-e5ab8589ff79
+		summarizeBy: none
 		sourceColumn: BANDERA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
 
 	column GRUPO
 		dataType: string
 		lineageTag: 08741ee6-bb43-41e4-bd7f-d78b5431f818
+		summarizeBy: none
 		sourceColumn: GRUPO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
 
 	column CATEGORIA
 		dataType: string
-		isHidden
 		lineageTag: 600ab766-9af6-46e3-8c30-d60e39222408
+		summarizeBy: none
 		sourceColumn: CATEGORIA
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
 
 	column AREA_CCU
 		dataType: string
 		lineageTag: d3b18342-a10c-4702-862d-7e835a270c43
+		summarizeBy: none
 		sourceColumn: AREA_CCU
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
 
 	column GranArea_CCU
 		dataType: string
 		lineageTag: ffdc1909-26d8-4efa-b004-fe2bc8cc2623
+		summarizeBy: none
 		sourceColumn: GranArea_CCU
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
 
 	column SUBAREA_CCU
 		dataType: string
 		lineageTag: 57d6ab6d-a2b5-4f81-8a19-bab16160823b
+		summarizeBy: none
 		sourceColumn: SUBAREA_CCU
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
 
 	column Formato_M2
 		dataType: string
 		lineageTag: c68cff31-ad39-48f5-8891-eef0ad52a4cc
+		summarizeBy: none
 		sourceColumn: Formato_M2
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
 
 	column EAN
 		dataType: int64
-		isHidden
 		lineageTag: eb004a9a-ce2c-485a-ab74-55f0b1f536c4
+		summarizeBy: none
 		sourceColumn: EAN
+
+		changedProperty = IsHidden
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+		annotation SummarizationSetBy = Automatic
+
 	column EAN_DESC
 		dataType: string
-		isHidden
 		lineageTag: 5a110314-6efb-4dc8-ac98-24b848bf3e68
+		summarizeBy: none
 		sourceColumn: EAN_DESC
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
 
 	column CALIBRE
 		dataType: int64
-		isHidden
 		lineageTag: 2b7e17eb-2f75-4048-b651-98f5b27ad18d
+		summarizeBy: sum
 		sourceColumn: CALIBRE
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
 
 	column CONTENIDO
 		dataType: int64
-		isHidden
 		lineageTag: af545cba-1ca2-4b54-aa5b-334269840a74
+		summarizeBy: sum
 		sourceColumn: CONTENIDO
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
 
 	column Unidades
 		dataType: int64
 		lineageTag: 0be264b3-1865-43ef-8073-32aab08241f9
+		summarizeBy: sum
 		sourceColumn: Unidades
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
 
 	column VentaValorizada
 		dataType: double
 		lineageTag: f0257148-be5a-45e2-a6ae-30bd98cb421b
+		summarizeBy: sum
 		sourceColumn: VentaValorizada
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
 
 	column Volumen_Lts
 		dataType: double
 		lineageTag: 29bfaac7-1eae-49c3-a41b-8abcb4f56005
+		summarizeBy: sum
 		sourceColumn: Volumen_Lts
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		annotation SummarizationSetBy = Automatic
 
 	column 'pcio por uni'
 		dataType: string
-		isHidden
 		lineageTag: 8cc34d9e-80e4-4f7b-b5f6-ba8d93af3d1b
+		summarizeBy: none
 		sourceColumn: pcio por uni
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
 
 	column 'Pciox vol'
 		dataType: double
-		isHidden
 		lineageTag: c55b7d8e-2dc9-479e-b122-a50446492766
+		summarizeBy: sum
 		sourceColumn: Pciox vol
 
+		changedProperty = IsHidden
+
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fecha_Combinada =
+			
+			VAR Ano = Data_vol[AÑO]
+			VAR Mes = Data_vol[MES]
+			VAR Semana = Data_vol[SEMANA]
+			VAR PrimerDiaMes = DATE(Ano, Mes, 1)
+			RETURN
+			    PrimerDiaMes + (Semana - 1) * 7
+		formatString: General Date
+		lineageTag: 8684a48c-4020-4c5c-870f-54234e9b9c3c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sem-Año = Data_Vol[Semana]&"-"& Data_Vol[Año]
+		lineageTag: 15ceab20-345e-4f69-8156-25c46adb89aa
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes-año = RELATED(Calendario[Mes-Año])
+		formatString: General Date
+		lineageTag: 5d0e5fa0-efaa-4924-80c0-198a660faf08
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date = related(Calendario[Date])
+		formatString: General Date
+		lineageTag: 2a1af225-7ad4-4123-a08c-2efee8f10c73
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
 
 	partition Data_vol = m
 		source =
 				let
-				    Origen = Folder.Files("C:\CLIENTES\Semanal\5_CONSOLIDADOS\CERVEZAS\Data_vol_CCU"),
+				    Origen = Folder.Files("C:\Users\Dario Sidi\Downloads\wetransfer_data_vol-zip_2025-11-11_1209\Data_vol\Data_vol_CCU"),
 				    #"Archivos ocultos filtrados1" = Table.SelectRows(Origen, each [Attributes]?[Hidden]? <> true),
 				    #"Invocar función personalizada1" = Table.AddColumn(#"Archivos ocultos filtrados1", "Transformar archivo", each #"Transformar archivo"([Content])),
 				    #"Columnas con nombre cambiado1" = Table.RenameColumns(#"Invocar función personalizada1", {"Name", "Source.Name"}),
@@ -164,7 +300,9 @@ table Data_vol
 				in
 				    #"Filas filtradas"
 
+	changedProperty = IsHidden
+
 	annotation PBI_NavigationStepName = Navegación
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 

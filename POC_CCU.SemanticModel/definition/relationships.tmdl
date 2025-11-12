@@ -2,3 +2,22 @@ relationship c7e23692-0aad-45fb-b608-0887abc662c6
 	fromColumn: Data_vol.EAN
 	toColumn: IM.EAN
 
+relationship 117de992-8e97-485d-976f-e9864e0f7b3b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendario.Date
+	toColumn: LocalDateTable_070bbef8-dad1-41f8-bfab-88dc37271cac.Date
+
+relationship 51c8dc86-ee7b-4d67-aa67-de50cb240c88
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendario.Hasta
+	toColumn: LocalDateTable_c12000d8-47bc-46ab-8aa6-9b9619f2c171.Date
+
+relationship 49ad9ce1-a1f7-5fc3-2608-94ac0667359c
+	fromColumn: Data_vol.Sem-Año
+	toColumn: Calendario.Año-Sem
+
+relationship 7d40e3c8-3bc9-4a2b-bc51-3f6cf188beee
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendario.Mes-Año
+	toColumn: LocalDateTable_eff6d163-c17e-4fd6-9feb-263e6d651c26.Date
+
