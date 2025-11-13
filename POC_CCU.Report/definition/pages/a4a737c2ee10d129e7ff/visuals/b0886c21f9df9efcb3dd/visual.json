@@ -6,8 +6,7 @@
     "y": 230,
     "z": 2000,
     "height": 430,
-    "width": 466.25,
-    "tabOrder": 1000
+    "width": 466.25
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -32,6 +31,42 @@
             }
           ]
         },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Data_vol"
+                    }
+                  },
+                  "Property": "GRUPO"
+                }
+              },
+              "queryRef": "Data_vol.GRUPO",
+              "nativeQueryRef": "GRUPO"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medida"
+                    }
+                  },
+                  "Property": "Aporte Vol Grupo"
+                }
+              },
+              "queryRef": "Medida.Aporte Vol Grupo",
+              "nativeQueryRef": "Aporte Vol Grupo"
+            }
+          ]
+        },
         "Y": {
           "projections": [
             {
@@ -42,11 +77,11 @@
                       "Entity": "Medida"
                     }
                   },
-                  "Property": "%Var MismaSemanaAnoAnterior"
+                  "Property": "Aporte Vol Grupo"
                 }
               },
-              "queryRef": "Medida.%Var MismaSemanaAnoAnterior",
-              "nativeQueryRef": "%Var MismaSemanaAnoAnterior"
+              "queryRef": "Medida.Aporte Vol Grupo",
+              "nativeQueryRef": "Aporte Vol Grupo"
             }
           ]
         }
@@ -61,7 +96,7 @@
                     "Entity": "Medida"
                   }
                 },
-                "Property": "%Var MismaSemanaAnoAnterior"
+                "Property": "Aporte Vol Grupo"
               }
             },
             "direction": "Descending"
@@ -69,6 +104,21 @@
         ],
         "isDefaultSort": true
       }
+    },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   }

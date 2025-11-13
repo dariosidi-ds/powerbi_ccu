@@ -223,6 +223,48 @@ table Medida
 		formatString: 0
 		lineageTag: caf085d2-91a3-4881-8fbb-d4e7010b6762
 
+	measure 'Volumen Semana Anterior P_Vol' = ```
+			
+			VAR SemanaActual = MAX(Calendario[Ano-Sem_NUM])
+			VAR SemanaAnterior = SemanaActual - 1
+			RETURN 
+			CALCULATE(SUM(Data_vol[Pciox vol] ),Calendario[Ano-Sem_NUM]=SemanaAnterior
+			)
+			```
+		lineageTag: 1a15df81-83a4-4f35-9c96-c24203b4311d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'PPL Doce Semanas' = ```
+			
+			VAR SemanaActual = MAX(Calendario[Ano-Sem_NUM])
+			RETURN
+			CALCULATE(
+			    [Pcio_Lt],
+			    FILTER(
+			        ALL(Calendario),
+			        Calendario[Ano-Sem_NUM] < SemanaActual &&
+			        Calendario[Ano-Sem_NUM] >= SemanaActual - 12
+			    )
+			)
+			
+			
+			
+			```
+		formatString: 0.00
+		lineageTag: 30d62e10-63fd-40d0-abcb-2288eb0393b6
+
+	measure 'Var PLL Doce Semanas' =
+			
+			VAR valor = DIVIDE([Pcio_Lt]-[PPL Doce Semanas],[PPL Doce Semanas],0)
+			RETURN valor
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 82dfc579-0824-4073-b3d9-c84411b199f5
+
+	measure 'Aporte Vol Grupo' = DIVIDE([Volumen_lts],CALCULATE([Volumen_lts],ALL(Data_vol[GRUPO])))
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		lineageTag: 2e6ec932-6ccc-4915-b68c-da6ee77fb6ce
+
 	partition Medida = m
 		mode: import
 		source =

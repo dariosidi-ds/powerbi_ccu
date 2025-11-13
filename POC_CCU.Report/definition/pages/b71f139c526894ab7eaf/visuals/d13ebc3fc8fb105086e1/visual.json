@@ -450,34 +450,6 @@
         }
       },
       {
-        "name": "f3d682a4f9a98937822d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "IM"
-              }
-            },
-            "Property": "MANUF"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "abe16c8873ee85d35a09",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "IM"
-              }
-            },
-            "Property": "BRAND"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "86449ab72e28b3f9a726",
         "field": {
           "Measure": {
@@ -528,76 +500,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "d92a5202f43f2dae8fb8",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medida"
-              }
-            },
-            "Property": "Target_Cliente"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "d6e27bba83e3c100ec80",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medida"
-              }
-            },
-            "Property": "Var Target"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "aa650b0fb6a9cdeec201",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medida"
-              }
-            },
-            "Property": "Volumen Tendencia Estimada"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "26c6da57acfb6bf7435d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Target"
-              }
-            },
-            "Property": "TARGET"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "d05ce76cbe5c49baf66d",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medida"
-              }
-            },
-            "Property": "Indicador Rojos"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

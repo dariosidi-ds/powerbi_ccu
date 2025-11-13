@@ -6,8 +6,7 @@
     "y": 208.75,
     "z": 0,
     "height": 311.25,
-    "width": 1270,
-    "tabOrder": 3000
+    "width": 1270
   },
   "visual": {
     "visualType": "tableEx",
@@ -70,6 +69,20 @@
               },
               "queryRef": "Sum(Calendario.Año-Sem_NUM)",
               "nativeQueryRef": "Ano-Sem_NUM"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medida"
+                    }
+                  },
+                  "Property": "Indicador Rojos"
+                }
+              },
+              "queryRef": "Medida.Indicador",
+              "nativeQueryRef": "Indicador Rojos"
             },
             {
               "field": {
@@ -146,14 +159,28 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
+                      "Entity": "Data_vol"
+                    }
+                  },
+                  "Property": "Pcio_Lt"
+                }
+              },
+              "queryRef": "Data_vol.Pcio_Lt",
+              "nativeQueryRef": "Pcio_Lt"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
                       "Entity": "Medida"
                     }
                   },
-                  "Property": "Indicador Rojos"
+                  "Property": "Var PLL Doce Semanas"
                 }
               },
-              "queryRef": "Medida.Indicador",
-              "nativeQueryRef": "Indicador Rojos"
+              "queryRef": "Medida.Var PLL Doce Semanas",
+              "nativeQueryRef": "Var PLL Doce Semanas"
             }
           ]
         }
@@ -166,7 +193,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "88.0000059409216D"
+                  "Value": "89D"
                 }
               }
             }
@@ -180,7 +207,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "113.9999983170453D"
+                  "Value": "102D"
                 }
               }
             }
@@ -194,7 +221,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "93.00000578291836D"
+                  "Value": "79D"
                 }
               }
             }
@@ -208,7 +235,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "106.32570014591829D"
+                  "Value": "132D"
                 }
               }
             }
@@ -222,7 +249,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "91.74999424727275D"
+                  "Value": "57D"
                 }
               }
             }
@@ -236,7 +263,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "218D"
+                  "Value": "112D"
                 }
               }
             }
@@ -250,7 +277,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "165.8454266488337D"
+                  "Value": "120D"
                 }
               }
             }
@@ -264,7 +291,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "66D"
+                  "Value": "102D"
                 }
               }
             }
@@ -292,7 +319,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "159D"
+                  "Value": "149D"
                 }
               }
             }
@@ -300,12 +327,201 @@
           "selector": {
             "metadata": "Medida.Var Semana Año Anterior"
           }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "64D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Data_vol.Pcio_Lt"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "143D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medida.Var PLL Doce Semanas"
+          }
         }
       ],
       "columnHeaders": [
         {
           "properties": {
             "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 0
+                }
+              }
+            ],
+            "metadata": "Medida.Parametro_num"
+          }
+        },
+        {
+          "properties": {
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "Medida"
+                                        }
+                                      },
+                                      "Property": "Indicador Rojos"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "3D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 4,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "Medida"
+                                        }
+                                      },
+                                      "Property": "Indicador Rojos"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "5D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#FFC7CE'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "Medida"
+                                    }
+                                  },
+                                  "Property": "Var Semana Anterior"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "'Rojo'"
+                                }
+                              }
+                            },
+                            "Annotations": {
+                              "PowerBI.SQExprEvaluationKind": 1,
+                              "PowerBI.SQExprTextOperatorOption": 2
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#9C0006'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Medida.Parametro_num"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Medida.Indicador"
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
               "expr": {
                 "Literal": {
                   "Value": "false"
@@ -422,7 +638,7 @@
         }
       },
       {
-        "name": "e3e3b142bb74bb6d9752",
+        "name": "6620afd63b454bca0134",
         "field": {
           "Column": {
             "Expression": {
@@ -436,7 +652,7 @@
         "type": "Categorical"
       },
       {
-        "name": "5d51b36e85ee92edc687",
+        "name": "03582f41756cb493c1cf",
         "field": {
           "Column": {
             "Expression": {
@@ -450,7 +666,7 @@
         "type": "Categorical"
       },
       {
-        "name": "f416a98dbb0cc8679928",
+        "name": "548f7613916756c0aaf4",
         "field": {
           "Measure": {
             "Expression": {
@@ -464,7 +680,7 @@
         "type": "Advanced"
       },
       {
-        "name": "97e4a1a090109da5e38d",
+        "name": "81e73c032912604802f3",
         "field": {
           "Measure": {
             "Expression": {
@@ -478,7 +694,7 @@
         "type": "Advanced"
       },
       {
-        "name": "2ce56446211c75e871c1",
+        "name": "f3b0aa580e498c81d273",
         "field": {
           "Measure": {
             "Expression": {
@@ -492,7 +708,7 @@
         "type": "Advanced"
       },
       {
-        "name": "3ea95ecdb18481ca4c0c",
+        "name": "6059ff3d9a37225639d5",
         "field": {
           "Measure": {
             "Expression": {
@@ -501,6 +717,48 @@
               }
             },
             "Property": "Indicador Rojos"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "15ba235af83d1dd81da1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medida"
+              }
+            },
+            "Property": "Var Target"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4f6083a9d3f14dde3564",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medida"
+              }
+            },
+            "Property": "Var Tendencia Estimada"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c1a30529ab90d9b649ae",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Data_vol"
+              }
+            },
+            "Property": "Pcio_Lt"
           }
         },
         "type": "Advanced"
