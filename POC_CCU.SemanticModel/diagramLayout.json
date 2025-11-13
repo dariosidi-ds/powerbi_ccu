@@ -61,19 +61,6 @@
         },
         {
           "location": {
-            "x": 1071.7142857142856,
-            "y": 345.35714285714283
-          },
-          "nodeIndex": "Parametros_semaforo",
-          "nodeLineageTag": "a86d6feb-a33f-402d-9259-cf0ea7be3d26",
-          "size": {
-            "height": 128,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
             "x": 55.714285714285779,
             "y": 429.92857142857144
           },

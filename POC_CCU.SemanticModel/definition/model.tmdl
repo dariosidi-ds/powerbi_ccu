@@ -24,7 +24,7 @@ queryGroup 'Transformar archivo de Data_vol (2)\Consultas auxiliares'
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["Data_vol","Parámetro1","Transformar archivo de ejemplo","Archivo de ejemplo","Transformar archivo","Data_vol Unificado","Parámetro2","Transformar archivo de ejemplo (2)","Archivo de ejemplo (2)","Transformar archivo (2)","IM","Medida","Calendario","Parametros_semaforo","Target"]
+annotation PBI_QueryOrder = ["Data_vol","Parámetro1","Transformar archivo de ejemplo","Archivo de ejemplo","Transformar archivo","Data_vol Unificado","Parámetro2","Transformar archivo de ejemplo (2)","Archivo de ejemplo (2)","Transformar archivo (2)","IM","Medida","Calendario","Target"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -36,7 +36,6 @@ ref table DateTableTemplate_5336c08e-2731-4354-931d-7b7d94257ac1
 ref table LocalDateTable_070bbef8-dad1-41f8-bfab-88dc37271cac
 ref table LocalDateTable_c12000d8-47bc-46ab-8aa6-9b9619f2c171
 ref table LocalDateTable_0496ee4f-8a73-4bb8-aece-580020ff7ffd
-ref table Parametros_semaforo
 ref table Target
 
 ref cultureInfo es-AR
