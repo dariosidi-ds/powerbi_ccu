@@ -4,109 +4,154 @@ table IM
 	column EAN_TEXTO
 		dataType: string
 		lineageTag: dfc13279-b32c-42b3-af21-72cf893ff954
+		summarizeBy: none
 		sourceColumn: EAN_TEXTO
 
 		annotation PBI_FormatHint = {"isText":true}
+
+		annotation SummarizationSetBy = Automatic
 
 	column EAN
 		dataType: double
 		isHidden
 		lineageTag: 21bfa668-8486-48e2-a09d-a6f3b1f9e2e2
+		summarizeBy: none
 		sourceColumn: EAN
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+		annotation SummarizationSetBy = Automatic
+
 	column EAN_DESC
 		dataType: string
 		lineageTag: e57b9a8e-4500-4ca7-a91f-9135990eddc8
+		summarizeBy: none
 		sourceColumn: EAN_DESC
 
 		annotation PBI_FormatHint = {"isText":true}
 
+		annotation SummarizationSetBy = Automatic
+
 	column Categoria
 		dataType: string
 		lineageTag: 4eb8ed9c-4f4b-459b-b230-0af063e8684c
+		summarizeBy: none
 		sourceColumn: Categoria
 
 		annotation PBI_FormatHint = {"isText":true}
 
+		annotation SummarizationSetBy = Automatic
+
 	column Calibre
 		dataType: double
 		lineageTag: d972f9fe-0b44-46de-b80c-c245046dd8f2
+		summarizeBy: sum
 		sourceColumn: Calibre
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+		annotation SummarizationSetBy = Automatic
+
 	column Contenido
 		dataType: double
 		lineageTag: a95f6471-8b7b-4d3c-87e3-241acc210f18
+		summarizeBy: sum
 		sourceColumn: Contenido
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+		annotation SummarizationSetBy = Automatic
+
 	column SIZE_CCU
 		dataType: string
 		lineageTag: be633614-3896-4ec0-a9f4-314a5dcab8cd
+		summarizeBy: none
 		sourceColumn: SIZE_CCU
 
 		annotation PBI_FormatHint = {"isText":true}
 
+		annotation SummarizationSetBy = Automatic
+
 	column MANUF
 		dataType: string
 		lineageTag: 7bea503f-3bc3-47ea-a32b-8042849ecc29
+		summarizeBy: none
 		sourceColumn: MANUF
 
 		annotation PBI_FormatHint = {"isText":true}
 
+		annotation SummarizationSetBy = Automatic
+
 	column BRAND
 		dataType: string
 		lineageTag: 62c78f2e-738d-44b6-8180-035e86e7558b
+		summarizeBy: none
 		sourceColumn: BRAND
 
 		annotation PBI_FormatHint = {"isText":true}
 
+		annotation SummarizationSetBy = Automatic
+
 	column ENVASE
 		dataType: string
 		lineageTag: 6dc85b0a-5402-4407-a724-8f21f147b871
+		summarizeBy: none
 		sourceColumn: ENVASE
 
 		annotation PBI_FormatHint = {"isText":true}
 
+		annotation SummarizationSetBy = Automatic
+
 	column SEGMENTO
 		dataType: string
 		lineageTag: 1543b722-1081-44bd-911e-ec2831013f34
+		summarizeBy: none
 		sourceColumn: SEGMENTO
 
 		annotation PBI_FormatHint = {"isText":true}
 
+		annotation SummarizationSetBy = Automatic
+
 	column SUBBRAND
 		dataType: string
 		lineageTag: fe83495c-93e0-4a68-99c9-3b1ae66f97d5
+		summarizeBy: none
 		sourceColumn: SUBBRAND
 
 		annotation PBI_FormatHint = {"isText":true}
+
+		annotation SummarizationSetBy = Automatic
 
 	column COLOR
 		dataType: string
 		isHidden
 		lineageTag: c3d5ef54-3a7c-474d-89b5-55e34a883436
+		summarizeBy: none
 		sourceColumn: COLOR
 
 		annotation PBI_FormatHint = {"isText":true}
 
+		annotation SummarizationSetBy = Automatic
+
 	column RET_NORET
 		dataType: string
 		lineageTag: fa1225b0-3a63-4ef7-a827-41b240da2019
+		summarizeBy: none
 		sourceColumn: RET_NORET
 
 		annotation PBI_FormatHint = {"isText":true}
 
+		annotation SummarizationSetBy = Automatic
+
 	column SEG_LIQUIDO
 		dataType: string
 		lineageTag: 111d23b1-3ebb-432a-add0-6caf84c856de
+		summarizeBy: none
 		sourceColumn: SEG_LIQUIDO
 
 		annotation PBI_FormatHint = {"isText":true}
+
+		annotation SummarizationSetBy = Automatic
 
 	column 'Manuf 2'
 		dataType: string

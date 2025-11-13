@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
-  "name": "412f625cce68a8b5604e",
+  "name": "ccdf1bfedbc14d7f38f9",
   "position": {
-    "x": 10,
-    "y": 520,
-    "z": 2000,
-    "height": 200,
-    "width": 455,
-    "tabOrder": 1000
+    "x": 727.5,
+    "y": 16.25,
+    "z": 2004,
+    "height": 110,
+    "width": 227.5,
+    "tabOrder": 3004
   },
   "visual": {
     "visualType": "slicer",
@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "IM.BRAND",
-              "nativeQueryRef": "BRAND",
-              "active": true
+              "nativeQueryRef": "MARCA",
+              "active": true,
+              "displayName": "MARCA"
             }
           ]
         }
@@ -42,6 +43,39 @@
               "expr": {
                 "Literal": {
                   "Value": "'Basic'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "selectAllCheckboxEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -88,14 +122,14 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'BLUE MOON'"
+                                "Value": "'BIECKERT'"
                               }
                             }
                           ],
                           [
                             {
                               "Literal": {
-                                "Value": "'BIECKERT'"
+                                "Value": "'BLUE MOON'"
                               }
                             }
                           ],
@@ -109,14 +143,14 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'WARSTEINER'"
+                                "Value": "'MILLER'"
                               }
                             }
                           ],
                           [
                             {
                               "Literal": {
-                                "Value": "'MILLER'"
+                                "Value": "'WARSTEINER'"
                               }
                             }
                           ]
@@ -125,57 +159,6 @@
                     }
                   }
                 ]
-              }
-            },
-            "selfFilter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "i",
-                    "Entity": "IM",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "Contains": {
-                        "Left": {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "i"
-                              }
-                            },
-                            "Property": "BRAND"
-                          }
-                        },
-                        "Right": {
-                          "Literal": {
-                            "Value": "'mil'"
-                          }
-                        }
-                      }
-                    },
-                    "Annotations": {
-                      "PowerBI.MParameterBehavior": 1
-                    }
-                  }
-                ]
-              }
-            }
-          }
-        }
-      ],
-      "selection": [
-        {
-          "properties": {
-            "singleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
               }
             }
           }

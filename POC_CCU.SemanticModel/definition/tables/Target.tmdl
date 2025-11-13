@@ -1,0 +1,51 @@
+table Target
+	lineageTag: f9777263-50d4-41f6-8585-7a2e08e1aada
+
+	column SEGMENTO
+		dataType: string
+		lineageTag: edde1bca-8e12-477f-9663-d6df32e617ee
+		summarizeBy: none
+		sourceColumn: SEGMENTO
+
+		annotation SummarizationSetBy = Automatic
+
+	column MANUF
+		dataType: string
+		lineageTag: 8ae6dbfa-634a-4d33-90d5-9d0acbcebb93
+		summarizeBy: none
+		sourceColumn: MANUF
+
+		annotation SummarizationSetBy = Automatic
+
+	column BRAND
+		dataType: string
+		lineageTag: 5c9a3d5e-16a8-43bb-bfb6-8a5fa29be61b
+		summarizeBy: none
+		sourceColumn: BRAND
+
+		annotation SummarizationSetBy = Automatic
+
+	column TARGET
+		dataType: int64
+		formatString: 0
+		lineageTag: 8062e822-ffd0-458f-ab30-32f4e7e4d315
+		summarizeBy: none
+		sourceColumn: TARGET
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Target = m
+		mode: import
+		source =
+				let
+				    Origen = Excel.Workbook(File.Contents("C:\Users\Dario Sidi\Downloads\Dev PBI\TARGET.xlsx"), null, true),
+				    Hoja2_Sheet = Origen{[Item="Hoja2",Kind="Sheet"]}[Data],
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Hoja2_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"SEGMENTO", type text}, {"MANUF", type text}, {"BRAND", type text}, {"TARGET", Int64.Type}})
+				in
+				    #"Tipo cambiado"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

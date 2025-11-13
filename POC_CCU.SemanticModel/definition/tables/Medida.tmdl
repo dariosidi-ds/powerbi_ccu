@@ -34,13 +34,194 @@ table Medida
 		formatString: 0.00\ %;-0.00\ %;0.00\ %
 		lineageTag: 84672915-05c3-4d87-ba21-d1ac212d39e5
 
-	measure Parametro_num =
+	measure 'Var Semana Anterior' =
 			
-			VAR variacion=[%Var_una_semana]<0.5
-			
-			RETURN IF(variacion,1,0)
-		formatString: 0
+			VAR menor=[%Var_una_semana]<=-0.01
+			VAR mayor=[%Var_una_semana]>=0.01
+			RETURN IF(menor,"Rojo",IF(mayor,"Verde","Amarillo"))
 		lineageTag: 6f09401b-c948-40f0-863b-08f84fddeb8a
+
+	measure 'AVG Tres Semanas Anterior' = ```
+			
+			VAR SemanaActual = MAX(Calendario[Ano-Sem_NUM])
+			RETURN
+			CALCULATE(
+			    AVERAGEX(
+			        VALUES(Calendario[Ano-Sem_NUM]),
+			        [Volumen_lts]
+			    ),
+			    FILTER(
+			        ALL(Calendario),
+			        Calendario[Ano-Sem_NUM] < SemanaActual &&
+			        Calendario[Ano-Sem_NUM] >= SemanaActual - 3
+			    )
+			)
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			```
+		lineageTag: ab3b2f31-f55f-4302-b1a8-a62b162b3834
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure %Media_una_semana = ```
+			
+			 DIVIDE([Suma de Volumen_Lts]-[Volumen Semana Anterior],[Volumen Semana Anterior],0)
+			```
+		lineageTag: 137e3741-3fd8-41d8-9800-bf1ca6df0b31
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Volumen_lts = SUM (Data_vol[Volumen_Lts])
+		lineageTag: 49f390d9-b990-4ecb-a2b8-8f573440d5ed
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Var Tres Semanas' = ```
+			
+			VAR menor = DIVIDE([Volumen_lts]-[AVG Tres Semanas Anterior],[AVG Tres Semanas Anterior],0)<=-0.01
+			VAR mayor = DIVIDE([Volumen_lts]-[AVG Tres Semanas Anterior],[AVG Tres Semanas Anterior],0)>=0.01
+			RETURN IF(menor,"Rojo",IF(mayor,"Verde","Amarillo"))
+			
+			
+			```
+		lineageTag: f25f5f95-439f-4832-afd9-609bd7964722
+
+	measure 'AVG Doce Semanas Anterior' =
+			
+			VAR SemanaActual = MAX(Calendario[Ano-Sem_NUM])
+			RETURN
+			CALCULATE(
+			    AVERAGEX(
+			        VALUES(Calendario[Ano-Sem_NUM]),
+			        [Volumen_lts]
+			    ),
+			    FILTER(
+			        ALL(Calendario),
+			        Calendario[Ano-Sem_NUM] < SemanaActual &&
+			        Calendario[Ano-Sem_NUM] >= SemanaActual - 12
+			    )
+			)
+		lineageTag: 68329f4a-3748-4f09-ac01-987c4b7c8c0c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Var Doce Semanas' =
+			
+			VAR menor = DIVIDE([Volumen_lts]-[AVG Doce Semanas Anterior],[AVG Doce Semanas Anterior],0)<=-0.01
+			VAR mayor = DIVIDE([Volumen_lts]-[AVG Doce Semanas Anterior],[AVG Doce Semanas Anterior],0)>=0.01
+			RETURN IF(menor,"Rojo",IF(mayor,"Verde","Amarillo"))
+		lineageTag: 6943d3fb-9df5-474e-bfdc-6ca19b891282
+
+	measure 'Indicador Rojos' = [Var Doce Semanas Num]+[Var Tres Semanas Num]+[Var Semana Anterior Num]+[Var Tendencia Estimada Num]+[Var Target Num]
+		formatString: 0
+		lineageTag: 89e1e3f3-5159-4150-a777-fdf55d008744
+
+	measure Medida =
+			
+			DIVIDE([Volumen_lts]-[AVG Doce Semanas Anterior],[AVG Doce Semanas Anterior],0)
+		lineageTag: f0657fc0-aedd-4bf8-b9f5-d10a68a112cb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Var Semana Anterior Num' =
+			
+			VAR menor=[%Var_una_semana]<=-0.01
+			RETURN IF(menor,1,0)
+		formatString: 0
+		lineageTag: 96911cf1-710d-4733-b4b6-17bee4e1d826
+
+	measure 'Var Tres Semanas Num' =
+			
+			VAR menor = DIVIDE([Volumen_lts]-[AVG Tres Semanas Anterior],[AVG Tres Semanas Anterior],0)<=-0.01
+			RETURN IF(menor,1,0)
+		formatString: 0
+		lineageTag: 6787ca0d-a577-4f69-8600-24188f4d0162
+
+	measure 'Var Doce Semanas Num' =
+			
+			VAR menor = DIVIDE([Volumen_lts]-[AVG Doce Semanas Anterior],[AVG Doce Semanas Anterior],0)<=-0.01
+			RETURN IF(menor,1,0)
+		formatString: 0
+		lineageTag: bd1453ff-35de-4db4-8a2e-222df1794310
+
+	measure 'Volumen Tendencia Estimada' = ```
+			
+			VAR SemanaActual = MAX(Calendario[Ano-Sem_NUM])
+			VAR SemanaAnterior = SemanaActual - 100
+			RETURN 
+			CALCULATE(SUM(Data_vol[Volumen_Lts] ),Calendario[Ano-Sem_NUM]=SemanaAnterior
+			)
+			
+			```
+		lineageTag: 9d569eb3-1358-42df-998e-357fc5e0c5b2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure '%Var MismaSemanaAnoAnterior' =
+			
+			DIVIDE([Volumen_Lts]-[Volumen Tendencia Estimada],[Volumen Tendencia Estimada],0)
+		formatString: 0.00
+		lineageTag: 9a2a7299-7914-47d6-aa39-4e2f277a9469
+
+	measure 'Var Tendencia Estimada' =
+			
+			VAR menor=[%Var MismaSemanaAnoAnterior]<=-0.01
+			VAR mayor=[%Var MismaSemanaAnoAnterior]>=0.01
+			RETURN IF(menor,"Rojo",IF(mayor,"Verde","Amarillo"))
+		lineageTag: 03376104-b7fb-4d8a-8d94-0bc80bdba261
+
+	measure 'Var Tendencia Estimada Num' =
+			
+			VAR menor=[%Var MismaSemanaAnoAnterior]<=-0.01
+			RETURN IF(menor,1,0)
+		formatString: 0
+		lineageTag: 96492a05-e78b-4fb3-acbc-77d3c1de2312
+
+	measure Target_Cliente = ```
+			
+			VAR _blank=ISBLANK (SELECTEDVALUE(Target[TARGET]))
+			RETURN
+			IF(SELECTEDVALUE(Target[TARGET])=BLANK(),[Volumen Tendencia Estimada],SELECTEDVALUE(Target[TARGET]))
+			
+			
+			
+			
+			
+			
+			
+			
+			```
+		formatString: 0
+		lineageTag: 8a5eee0e-afea-4053-a543-7b0f1dbeb9c5
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Var Target' = ```
+			
+			
+			VAR menor = [Volumen_lts]<[Target_Cliente]  *0.85
+			VAR mayor = [Volumen_lts]>=[Target_Cliente]  
+			RETURN IF(menor,"Rojo",IF(mayor,"Verde","Amarillo"))
+			```
+		lineageTag: c0528bd2-9673-499b-867a-be06bf54f0e7
+
+	measure 'Var Target Num' = ```
+			
+			
+			VAR menor = [Volumen_lts]<[Target_Cliente]  *0.85
+			VAR mayor = [Volumen_lts]>=[Target_Cliente]  
+			RETURN IF(menor,1,0)
+			```
+		formatString: 0
+		lineageTag: caf085d2-91a3-4881-8fbb-d4e7010b6762
 
 	partition Medida = m
 		mode: import

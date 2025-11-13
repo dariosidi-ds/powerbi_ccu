@@ -1,16 +1,10 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
-  "name": "b367c91f9d072598da27",
-  "displayName": "Detalle del alerta",
+  "name": "b71f139c526894ab7eaf",
+  "displayName": "Target",
   "displayOption": "FitToPage",
   "height": 720,
   "width": 1280,
-  "pageBinding": {
-    "name": "3f23118e8f1b8588fb7c",
-    "type": "Default",
-    "parameters": [],
-    "referenceScope": "CrossReport"
-  },
   "objects": {
     "outspacePane": [
       {

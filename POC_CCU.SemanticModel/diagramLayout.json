@@ -36,8 +36,8 @@
         },
         {
           "location": {
-            "x": 166,
-            "y": 359
+            "x": 1080.2857142857144,
+            "y": 10.428571428571381
           },
           "nodeIndex": "Medida",
           "nodeLineageTag": "31c25e91-5143-4213-ace2-e4f4022e15d6",
@@ -58,10 +58,36 @@
             "width": 234
           },
           "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1071.7142857142856,
+            "y": 345.35714285714283
+          },
+          "nodeIndex": "Parametros_semaforo",
+          "nodeLineageTag": "a86d6feb-a33f-402d-9259-cf0ea7be3d26",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 55.714285714285779,
+            "y": 429.92857142857144
+          },
+          "nodeIndex": "Target",
+          "nodeLineageTag": "f9777263-50d4-41f6-8585-7a2e08e1aada",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "Todas las tablas",
-      "zoomValue": 100,
+      "zoomValue": 70,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,

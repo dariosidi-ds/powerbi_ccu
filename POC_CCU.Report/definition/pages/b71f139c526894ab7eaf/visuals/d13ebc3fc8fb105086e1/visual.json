@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
-  "name": "ecd386147da0e6c9840c",
+  "name": "d13ebc3fc8fb105086e1",
   "position": {
-    "x": 10,
+    "x": 0,
     "y": 208.75,
     "z": 0,
     "height": 311.25,
     "width": 1270,
-    "tabOrder": 3000
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "tableEx",
@@ -62,6 +62,20 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
+                      "Entity": "Target"
+                    }
+                  },
+                  "Property": "TARGET"
+                }
+              },
+              "queryRef": "Target.TARGET",
+              "nativeQueryRef": "TARGET"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
                       "Entity": "Calendario"
                     }
                   },
@@ -79,11 +93,11 @@
                       "Entity": "Medida"
                     }
                   },
-                  "Property": "Var Semana Anterior"
+                  "Property": "Volumen Tendencia Estimada"
                 }
               },
-              "queryRef": "Medida.Parametro_num",
-              "nativeQueryRef": "Var Semana Anterior"
+              "queryRef": "Medida.Volumen Semana Año Anterior",
+              "nativeQueryRef": "Volumen Semana Año Anterior"
             },
             {
               "field": {
@@ -93,11 +107,11 @@
                       "Entity": "Medida"
                     }
                   },
-                  "Property": "Var Tres Semanas"
+                  "Property": "Volumen_lts"
                 }
               },
-              "queryRef": "Medida.Var Tres Semanas",
-              "nativeQueryRef": "Var Tres Semanas"
+              "queryRef": "Medida.Volumen_lts",
+              "nativeQueryRef": "Volumen_lts"
             },
             {
               "field": {
@@ -107,11 +121,11 @@
                       "Entity": "Medida"
                     }
                   },
-                  "Property": "Var Doce Semanas"
+                  "Property": "Target_Cliente"
                 }
               },
-              "queryRef": "Medida.Var Doce Semanas",
-              "nativeQueryRef": "Var Doce Semanas"
+              "queryRef": "Medida.Target_Cliente",
+              "nativeQueryRef": "Target_Cliente"
             },
             {
               "field": {
@@ -121,11 +135,25 @@
                       "Entity": "Medida"
                     }
                   },
-                  "Property": "Var Tendencia Estimada"
+                  "Property": "Var Target Num"
                 }
               },
-              "queryRef": "Medida.Var Semana Año Anterior",
-              "nativeQueryRef": "Var Tendencia Estimada"
+              "queryRef": "Medida.Var Target Num",
+              "nativeQueryRef": "Var Target Num"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medida"
+                    }
+                  },
+                  "Property": "Indicador Rojos"
+                }
+              },
+              "queryRef": "Medida.Indicador",
+              "nativeQueryRef": "Indicador"
             },
             {
               "field": {
@@ -140,20 +168,6 @@
               },
               "queryRef": "Medida.Var Target",
               "nativeQueryRef": "Var Target"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Medida"
-                    }
-                  },
-                  "Property": "Indicador Rojos"
-                }
-              },
-              "queryRef": "Medida.Indicador",
-              "nativeQueryRef": "Indicador Rojos"
             }
           ]
         }
@@ -208,20 +222,6 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "106.32570014591829D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Medida.Parametro_num"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
                   "Value": "91.74999424727275D"
                 }
               }
@@ -236,13 +236,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "218D"
+                  "Value": "118.99999765439324D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "Medida.Var Tres Semanas"
+            "metadata": "Medida.Volumen_lts"
           }
         },
         {
@@ -250,27 +250,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "165.8454266488337D"
+                  "Value": "93D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "Medida.Var Doce Semanas"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "66D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Medida.Indicador"
+            "metadata": "Medida.Target_Cliente"
           }
         },
         {
@@ -292,13 +278,55 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "159D"
+                  "Value": "192D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "Medida.Var Semana Año Anterior"
+            "metadata": "Medida.Volumen Semana Año Anterior"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "56D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Target.TARGET"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "66D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medida.Indicador"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "102D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Medida.Var Target Num"
           }
         }
       ],
@@ -422,7 +450,7 @@
         }
       },
       {
-        "name": "e3e3b142bb74bb6d9752",
+        "name": "f3d682a4f9a98937822d",
         "field": {
           "Column": {
             "Expression": {
@@ -436,7 +464,7 @@
         "type": "Categorical"
       },
       {
-        "name": "5d51b36e85ee92edc687",
+        "name": "abe16c8873ee85d35a09",
         "field": {
           "Column": {
             "Expression": {
@@ -450,7 +478,7 @@
         "type": "Categorical"
       },
       {
-        "name": "f416a98dbb0cc8679928",
+        "name": "86449ab72e28b3f9a726",
         "field": {
           "Measure": {
             "Expression": {
@@ -458,13 +486,51 @@
                 "Entity": "Medida"
               }
             },
-            "Property": "Var Semana Anterior"
+            "Property": "Volumen_lts"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "m",
+              "Entity": "Medida",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "Comparison": {
+                      "ComparisonKind": 0,
+                      "Left": {
+                        "Measure": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "m"
+                            }
+                          },
+                          "Property": "Volumen_lts"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "null"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
       },
       {
-        "name": "97e4a1a090109da5e38d",
+        "name": "d92a5202f43f2dae8fb8",
         "field": {
           "Measure": {
             "Expression": {
@@ -472,13 +538,13 @@
                 "Entity": "Medida"
               }
             },
-            "Property": "Var Tres Semanas"
+            "Property": "Target_Cliente"
           }
         },
         "type": "Advanced"
       },
       {
-        "name": "2ce56446211c75e871c1",
+        "name": "d6e27bba83e3c100ec80",
         "field": {
           "Measure": {
             "Expression": {
@@ -486,13 +552,41 @@
                 "Entity": "Medida"
               }
             },
-            "Property": "Var Doce Semanas"
+            "Property": "Var Target"
           }
         },
         "type": "Advanced"
       },
       {
-        "name": "3ea95ecdb18481ca4c0c",
+        "name": "aa650b0fb6a9cdeec201",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medida"
+              }
+            },
+            "Property": "Volumen Tendencia Estimada"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "26c6da57acfb6bf7435d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Target"
+              }
+            },
+            "Property": "TARGET"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d05ce76cbe5c49baf66d",
         "field": {
           "Measure": {
             "Expression": {

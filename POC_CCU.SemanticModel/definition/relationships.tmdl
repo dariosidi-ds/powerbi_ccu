@@ -21,3 +21,7 @@ relationship da96affb-51ed-d8c5-e933-045821bb556b
 	fromColumn: Data_vol.Año-Sem
 	toColumn: Calendario.Ano-Sem_NUM
 
+relationship eccc6d70-064c-3334-bf42-8f779ac7e136
+	fromColumn: IM.BRAND
+	toColumn: Target.BRAND
+

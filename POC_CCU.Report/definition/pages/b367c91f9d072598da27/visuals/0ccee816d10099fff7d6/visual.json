@@ -1,12 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
-  "name": "d4f1be93eb1abdc48adc",
+  "name": "0ccee816d10099fff7d6",
   "position": {
-    "x": 10,
-    "y": 290,
-    "z": 1000,
-    "height": 220,
-    "width": 455
+    "x": 500,
+    "y": 16.25,
+    "z": 2003,
+    "height": 110,
+    "width": 227.5,
+    "tabOrder": 3003
   },
   "visual": {
     "visualType": "slicer",
@@ -22,11 +23,11 @@
                       "Entity": "IM"
                     }
                   },
-                  "Property": "MANUF"
+                  "Property": "SEGMENTO"
                 }
               },
-              "queryRef": "IM.MANUF",
-              "nativeQueryRef": "MANUF",
+              "queryRef": "IM.SEGMENTO",
+              "nativeQueryRef": "SEGMENTO",
               "active": true
             }
           ]
@@ -47,9 +48,49 @@
           }
         }
       ],
+      "selection": [
+        {
+          "properties": {
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "selectAllCheckboxEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
       "general": [
         {
           "properties": {
+            "selfFilterEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
             "filter": {
               "filter": {
                 "Version": 2,
@@ -72,7 +113,7 @@
                                   "Source": "i"
                                 }
                               },
-                              "Property": "MANUF"
+                              "Property": "SEGMENTO"
                             }
                           }
                         ],
@@ -80,7 +121,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'CCU'"
+                                "Value": "'PREMIUM'"
                               }
                             }
                           ]

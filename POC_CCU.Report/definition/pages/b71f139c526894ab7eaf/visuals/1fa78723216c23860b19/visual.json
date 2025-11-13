@@ -1,12 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
-  "name": "859ab85f3cd1cc338008",
+  "name": "1fa78723216c23860b19",
   "position": {
     "x": 464.82482886739496,
     "y": 620.31783211840957,
     "z": 1000,
     "height": 67.821416311612779,
-    "width": 454.8997435535004
+    "width": 454.8997435535004,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "slicer",
@@ -96,23 +97,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "d7605adf20ac060cb98d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "IM"
-              }
-            },
-            "Property": "MANUF"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

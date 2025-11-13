@@ -10,7 +10,7 @@
     "tabOrder": 1000
   },
   "visual": {
-    "visualType": "barChart",
+    "visualType": "clusteredBarChart",
     "query": {
       "queryState": {
         "Category": {
@@ -36,37 +36,17 @@
           "projections": [
             {
               "field": {
-                "Arithmetic": {
-                  "Left": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Data_vol"
-                        }
-                      },
-                      "Property": "Suma de Volumen_Lts"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Medida"
                     }
                   },
-                  "Right": {
-                    "ScopedEval": {
-                      "Expression": {
-                        "Measure": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "Data_vol"
-                            }
-                          },
-                          "Property": "Suma de Volumen_Lts"
-                        }
-                      },
-                      "Scope": []
-                    }
-                  },
-                  "Operator": 3
+                  "Property": "%Var MismaSemanaAnoAnterior"
                 }
               },
-              "queryRef": "Data_vol.Suma de Volumen_Lts",
-              "nativeQueryRef": "%TG Suma de Volumen_Lts"
+              "queryRef": "Medida.%Var MismaSemanaAnoAnterior",
+              "nativeQueryRef": "%Var MismaSemanaAnoAnterior"
             }
           ]
         }
@@ -75,33 +55,13 @@
         "sort": [
           {
             "field": {
-              "Arithmetic": {
-                "Left": {
-                  "Measure": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "Data_vol"
-                      }
-                    },
-                    "Property": "Suma de Volumen_Lts"
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Medida"
                   }
                 },
-                "Right": {
-                  "ScopedEval": {
-                    "Expression": {
-                      "Measure": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Entity": "Data_vol"
-                          }
-                        },
-                        "Property": "Suma de Volumen_Lts"
-                      }
-                    },
-                    "Scope": []
-                  }
-                },
-                "Operator": 3
+                "Property": "%Var MismaSemanaAnoAnterior"
               }
             },
             "direction": "Descending"
