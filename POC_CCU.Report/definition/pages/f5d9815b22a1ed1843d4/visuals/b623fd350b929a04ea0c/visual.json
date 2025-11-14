@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
-  "name": "bde3948a3e0a646c1fb6",
+  "name": "b623fd350b929a04ea0c",
   "position": {
-    "x": 10,
-    "y": 520,
+    "x": 260,
+    "y": 16.25,
     "z": 2000,
-    "height": 200,
-    "width": 455,
-    "tabOrder": 2000
+    "height": 110,
+    "width": 240,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "IM"
+                      "Entity": "Data_vol"
                     }
                   },
-                  "Property": "BRAND"
+                  "Property": "BANDERA"
                 }
               },
-              "queryRef": "IM.BRAND",
-              "nativeQueryRef": "BRAND",
+              "queryRef": "Data_vol.BANDERA",
+              "nativeQueryRef": "BANDERA",
               "active": true
             }
           ]
@@ -42,6 +42,39 @@
               "expr": {
                 "Literal": {
                   "Value": "'Basic'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "selection": [
+        {
+          "properties": {
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "selectAllCheckboxEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -63,8 +96,8 @@
                 "Version": 2,
                 "From": [
                   {
-                    "Name": "i",
-                    "Entity": "IM",
+                    "Name": "d",
+                    "Entity": "Data_vol",
                     "Type": 0
                   }
                 ],
@@ -77,10 +110,10 @@
                             "Column": {
                               "Expression": {
                                 "SourceRef": {
-                                  "Source": "i"
+                                  "Source": "d"
                                 }
                               },
-                              "Property": "BRAND"
+                              "Property": "BANDERA"
                             }
                           }
                         ],
@@ -88,35 +121,77 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'BLUE MOON'"
+                                "Value": "'CARREFOUR'"
                               }
                             }
                           ],
                           [
                             {
                               "Literal": {
-                                "Value": "'BIECKERT'"
+                                "Value": "'COOP. OBRERA'"
                               }
                             }
                           ],
                           [
                             {
                               "Literal": {
-                                "Value": "'HEINEKEN'"
+                                "Value": "'DIA'"
                               }
                             }
                           ],
                           [
                             {
                               "Literal": {
-                                "Value": "'WARSTEINER'"
+                                "Value": "'DISCO'"
                               }
                             }
                           ],
                           [
                             {
                               "Literal": {
-                                "Value": "'MILLER'"
+                                "Value": "'GDN'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'JUMBO'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'LA ANONIMA'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'LIBERTAD'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'SPID35'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'TOLEDO'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'VEA'"
                               }
                             }
                           ]
@@ -125,57 +200,6 @@
                     }
                   }
                 ]
-              }
-            },
-            "selfFilter": {
-              "filter": {
-                "Version": 2,
-                "From": [
-                  {
-                    "Name": "i",
-                    "Entity": "IM",
-                    "Type": 0
-                  }
-                ],
-                "Where": [
-                  {
-                    "Condition": {
-                      "Contains": {
-                        "Left": {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "i"
-                              }
-                            },
-                            "Property": "BRAND"
-                          }
-                        },
-                        "Right": {
-                          "Literal": {
-                            "Value": "'mil'"
-                          }
-                        }
-                      }
-                    },
-                    "Annotations": {
-                      "PowerBI.MParameterBehavior": 1
-                    }
-                  }
-                ]
-              }
-            }
-          }
-        }
-      ],
-      "selection": [
-        {
-          "properties": {
-            "singleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
               }
             }
           }

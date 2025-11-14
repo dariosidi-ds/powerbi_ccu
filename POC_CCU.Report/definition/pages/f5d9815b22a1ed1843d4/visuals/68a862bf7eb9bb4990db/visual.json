@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
-  "name": "1fa78723216c23860b19",
+  "name": "68a862bf7eb9bb4990db",
   "position": {
-    "x": 464.82482886739496,
-    "y": 620.31783211840957,
-    "z": 1000,
-    "height": 67.821416311612779,
-    "width": 454.8997435535004,
-    "tabOrder": 1000
+    "x": 955,
+    "y": 16.25,
+    "z": 5000,
+    "height": 110,
+    "width": 227.5,
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "slicer",
@@ -48,9 +48,87 @@
           }
         }
       ],
+      "selection": [
+        {
+          "properties": {
+            "singleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "selectAllCheckboxEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
       "general": [
         {
           "properties": {
+            "selfFilterEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "selfFilter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "i",
+                    "Entity": "IM",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "Contains": {
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "i"
+                              }
+                            },
+                            "Property": "Manuf 2"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'CC'"
+                          }
+                        }
+                      }
+                    },
+                    "Annotations": {
+                      "PowerBI.MParameterBehavior": 1
+                    }
+                  }
+                ]
+              }
+            },
             "filter": {
               "filter": {
                 "Version": 2,

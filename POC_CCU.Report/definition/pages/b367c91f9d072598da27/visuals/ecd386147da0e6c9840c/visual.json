@@ -6,7 +6,8 @@
     "y": 208.75,
     "z": 0,
     "height": 172.5,
-    "width": 1270
+    "width": 1270,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "tableEx",
@@ -636,132 +637,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "6620afd63b454bca0134",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "IM"
-              }
-            },
-            "Property": "MANUF"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "03582f41756cb493c1cf",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "IM"
-              }
-            },
-            "Property": "BRAND"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "548f7613916756c0aaf4",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medida"
-              }
-            },
-            "Property": "Var Semana Anterior"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "81e73c032912604802f3",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medida"
-              }
-            },
-            "Property": "Var Tres Semanas"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "f3b0aa580e498c81d273",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medida"
-              }
-            },
-            "Property": "Var Doce Semanas"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "6059ff3d9a37225639d5",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medida"
-              }
-            },
-            "Property": "Indicador Rojos"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "15ba235af83d1dd81da1",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medida"
-              }
-            },
-            "Property": "Var Target"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "4f6083a9d3f14dde3564",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Medida"
-              }
-            },
-            "Property": "Var Tendencia Estimada"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "c1a30529ab90d9b649ae",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Data_vol"
-              }
-            },
-            "Property": "Pcio_Lt"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

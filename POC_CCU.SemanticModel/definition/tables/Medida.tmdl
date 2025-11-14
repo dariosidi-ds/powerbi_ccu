@@ -173,14 +173,14 @@ table Medida
 
 	measure 'Var Tendencia Estimada' =
 			
-			VAR menor=[%Var MismaSemanaAnoAnterior]<=-0.01
-			VAR mayor=[%Var MismaSemanaAnoAnterior]>=0.01
+			VAR menor=[Diferencia_vs_Real]<-10000
+			VAR mayor=[Diferencia_vs_Real]>=10000
 			RETURN IF(menor,"Rojo",IF(mayor,"Verde","Amarillo"))
 		lineageTag: 03376104-b7fb-4d8a-8d94-0bc80bdba261
 
 	measure 'Var Tendencia Estimada Num' =
 			
-			VAR menor=[%Var MismaSemanaAnoAnterior]<=-0.01
+			VAR menor=[Diferencia_vs_Real]<-10000
 			RETURN IF(menor,1,0)
 		formatString: 0
 		lineageTag: 96492a05-e78b-4fb3-acbc-77d3c1de2312
@@ -264,6 +264,67 @@ table Medida
 	measure 'Aporte Vol Grupo' = DIVIDE([Volumen_lts],CALCULATE([Volumen_lts],ALL(Data_vol[GRUPO])))
 		formatString: 0.00\ %;-0.00\ %;0.00\ %
 		lineageTag: 2e6ec932-6ccc-4915-b68c-da6ee77fb6ce
+
+	measure Diferencia_vs_Real =
+			
+			[Volumen_LTS] - [Tendencia_Estimada]
+		lineageTag: ddfab2b8-f87a-42e2-b6f3-489deffcf380
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Pendiente_b =
+			
+			VAR Tabla =
+			    ADDCOLUMNS(
+			        ALLSELECTED(Calendario[Ano-Sem_NUM]),
+			        "@x", Calendario[Ano-Sem_NUM],
+			        "@y", [Volumen_LTS]    -- o tu medida de Share
+			    )
+			VAR XProm =
+			    AVERAGEX(Tabla, [@x])
+			VAR YProm =
+			    AVERAGEX(Tabla, [@y])
+			VAR Numerador =
+			    SUMX(Tabla, ([@x] - XProm) * ([@y] - YProm))
+			VAR Denominador =
+			    SUMX(Tabla, ([@x] - XProm) ^ 2)
+			RETURN
+			    DIVIDE(Numerador, Denominador)
+		lineageTag: 73825088-f114-41fa-97e8-97c9079788ba
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Interseccion_a = ```
+			
+			VAR b = [Pendiente_b]
+			VAR Tabla =
+			    ADDCOLUMNS(
+			        ALLSELECTED(Calendario[Ano-Sem_NUM]),
+			        "@x", Calendario[Ano-Sem_NUM],
+			        "@y", [Volumen_LTS]
+			    )
+			VAR XProm =
+			    AVERAGEX(Tabla, [@x])
+			VAR YProm =
+			    AVERAGEX(Tabla, [@y])
+			RETURN
+			    YProm - b * XProm
+			
+			```
+		lineageTag: 45032fc9-224a-483e-a565-7b8fe3b5256c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Tendencia_Estimada =
+			
+			VAR x_t = MAX(Calendario[Ano-Sem_NUM])  -- semana actual del contexto
+			VAR a = [Interseccion_a]
+			VAR b = [Pendiente_b]
+			RETURN
+			    a + b * x_t
+		lineageTag: ee40b618-5124-4b9b-87be-cfea82a34de8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition Medida = m
 		mode: import

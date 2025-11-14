@@ -1,12 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
-  "name": "0a483599f8e47af51918",
+  "name": "d70af5136375b4241a72",
   "position": {
-    "x": 10,
+    "x": 500,
     "y": 16.25,
-    "z": 1000,
+    "z": 3000,
     "height": 110,
-    "width": 227.5
+    "width": 227.5,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "slicer",
@@ -19,16 +20,15 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Data_vol"
+                      "Entity": "IM"
                     }
                   },
-                  "Property": "AREA_CCU"
+                  "Property": "SEGMENTO"
                 }
               },
-              "queryRef": "Data_vol.AREA_CCU",
-              "nativeQueryRef": "Area Geografica",
-              "active": true,
-              "displayName": "Area Geografica"
+              "queryRef": "IM.SEGMENTO",
+              "nativeQueryRef": "SEGMENTO",
+              "active": true
             }
           ]
         }
@@ -89,6 +89,47 @@
                 "Literal": {
                   "Value": "true"
                 }
+              }
+            },
+            "filter": {
+              "filter": {
+                "Version": 2,
+                "From": [
+                  {
+                    "Name": "i",
+                    "Entity": "IM",
+                    "Type": 0
+                  }
+                ],
+                "Where": [
+                  {
+                    "Condition": {
+                      "In": {
+                        "Expressions": [
+                          {
+                            "Column": {
+                              "Expression": {
+                                "SourceRef": {
+                                  "Source": "i"
+                                }
+                              },
+                              "Property": "SEGMENTO"
+                            }
+                          }
+                        ],
+                        "Values": [
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'PREMIUM'"
+                              }
+                            }
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                ]
               }
             }
           }
