@@ -152,22 +152,9 @@ table Medida
 		formatString: 0
 		lineageTag: bd1453ff-35de-4db4-8a2e-222df1794310
 
-	measure 'Volumen Tendencia Estimada' = ```
-			
-			VAR SemanaActual = MAX(Calendario[Ano-Sem_NUM])
-			VAR SemanaAnterior = SemanaActual - 100
-			RETURN 
-			CALCULATE(SUM(Data_vol[Volumen_Lts] ),Calendario[Ano-Sem_NUM]=SemanaAnterior
-			)
-			
-			```
-		lineageTag: 9d569eb3-1358-42df-998e-357fc5e0c5b2
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	measure '%Var MismaSemanaAnoAnterior' =
 			
-			DIVIDE([Volumen_Lts]-[Volumen Tendencia Estimada],[Volumen Tendencia Estimada],0)
+			DIVIDE([Volumen_Lts]-[Volumen Target Estimado],[Volumen Target Estimado],0)
 		formatString: 0.00
 		lineageTag: 9a2a7299-7914-47d6-aa39-4e2f277a9469
 
@@ -189,7 +176,7 @@ table Medida
 			
 			VAR _blank=ISBLANK (SELECTEDVALUE(Target[TARGET]))
 			RETURN
-			IF(SELECTEDVALUE(Target[TARGET])=BLANK(),[Volumen Tendencia Estimada],SELECTEDVALUE(Target[TARGET]))
+			IF(SELECTEDVALUE(Target[TARGET])=BLANK(),[Volumen Target Estimado],SELECTEDVALUE(Target[TARGET]))
 			
 			
 			
@@ -323,6 +310,18 @@ table Medida
 			RETURN
 			    a + b * x_t
 		lineageTag: ee40b618-5124-4b9b-87be-cfea82a34de8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Volumen Target Estimado' = ```
+			
+			VAR SemanaActual = MAX(Calendario[Ano-Sem_NUM])
+			VAR SemanaAnterior = SemanaActual - 100
+			RETURN 
+			CALCULATE(SUM(Data_vol[Volumen_Lts] ),Calendario[Ano-Sem_NUM]=SemanaAnterior
+			)
+			```
+		lineageTag: dd1f6663-906b-40cb-b505-ac5f1b901c67
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 

@@ -92,7 +92,7 @@
                       "Entity": "Medida"
                     }
                   },
-                  "Property": "Volumen Tendencia Estimada"
+                  "Property": "Volumen Target Estimado"
                 }
               },
               "queryRef": "Medida.Volumen Semana Año Anterior",

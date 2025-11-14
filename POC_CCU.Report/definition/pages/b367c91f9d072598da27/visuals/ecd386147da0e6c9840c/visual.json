@@ -637,6 +637,146 @@
             }
           ]
         }
+      },
+      {
+        "name": "bb0de24124be03a0e48a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "IM"
+              }
+            },
+            "Property": "MANUF"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8beaabae7163c1624860",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "IM"
+              }
+            },
+            "Property": "BRAND"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8e37f5de4a90849988a8",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medida"
+              }
+            },
+            "Property": "Indicador Rojos"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c7eade950b5749e21bb5",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medida"
+              }
+            },
+            "Property": "Var Semana Anterior"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "354513ed5e50043904e2",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medida"
+              }
+            },
+            "Property": "Var Tres Semanas"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "5e7526d5b8644410290d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medida"
+              }
+            },
+            "Property": "Var Doce Semanas"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "97bebf3e5407c16beac0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medida"
+              }
+            },
+            "Property": "Var Tendencia Estimada"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "201db272093c9d900101",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medida"
+              }
+            },
+            "Property": "Var Target"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ee3085c69909ce962585",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Data_vol"
+              }
+            },
+            "Property": "Pcio_Lt"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1bff7aeb03a8d4ccc4a4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Medida"
+              }
+            },
+            "Property": "Var PLL Doce Semanas"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

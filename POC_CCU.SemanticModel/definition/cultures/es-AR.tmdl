@@ -2038,22 +2038,6 @@ cultureInfo es-AR
 			        }
 			      ]
 			    },
-			    "medida.volumen_tendencia_estimada": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "Medida",
-			          "ConceptualProperty": "Volumen Tendencia Estimada"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "volumen tendencia estimada": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
 			    "medida.var_MismaSemanaAnoAnterior": {
 			      "Definition": {
 			        "Binding": {
