@@ -32,11 +32,11 @@ expression 'Archivo de ejemplo' =
 expression 'Transformar archivo' =
 		let
 		    Origen = (Parámetro1 as binary) => let
-		    Origen = Excel.Workbook(Parámetro1, null, true),
-		    Hoja1_Sheet = Origen{[Item="Hoja1",Kind="Sheet"]}[Data],
-		    #"Encabezados promovidos" = Table.PromoteHeaders(Hoja1_Sheet, [PromoteAllScalars=true])
-		in
-		    #"Encabezados promovidos"
+		        Origen = Excel.Workbook(Parámetro1, null, true),
+		        Hoja1_Sheet = Origen{[Item="Hoja1",Kind="Sheet"]}[Data],
+		        #"Encabezados promovidos" = Table.PromoteHeaders(Hoja1_Sheet, [PromoteAllScalars=true])
+		    in
+		        #"Encabezados promovidos"
 		in
 		    Origen
 	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar archivo de ejemplo""}" ]
@@ -107,11 +107,11 @@ expression 'Archivo de ejemplo (2)' =
 expression 'Transformar archivo (2)' =
 		let
 		    Origen = (Parámetro2 as binary) => let
-		    Origen = Excel.Workbook(Parámetro2, null, true),
-		    Hoja1_Sheet = Origen{[Item="Hoja1",Kind="Sheet"]}[Data],
-		    #"Encabezados promovidos" = Table.PromoteHeaders(Hoja1_Sheet, [PromoteAllScalars=true])
-		in
-		    #"Encabezados promovidos"
+		        Origen = Excel.Workbook(Parámetro2, null, true),
+		        Hoja1_Sheet = Origen{[Item="Hoja1",Kind="Sheet"]}[Data],
+		        #"Encabezados promovidos" = Table.PromoteHeaders(Hoja1_Sheet, [PromoteAllScalars=true])
+		    in
+		        #"Encabezados promovidos"
 		in
 		    Origen
 	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar archivo de ejemplo (2)""}" ]
@@ -119,4 +119,27 @@ expression 'Transformar archivo (2)' =
 	queryGroup: 'Transformar archivo de Data_vol (2)\Consultas auxiliares'
 
 	annotation PBI_ResultType = Function
+
+expression 'Errores en Data_vol' =
+		let
+		Origen = Data_vol,
+		  #"Errores de coincidencia detectados" = let
+		    tableWithOnlyPrimitiveTypes = Table.SelectColumns(Origen, Table.ColumnsOfType(Origen, {type nullable number, type nullable text, type nullable logical, type nullable date, type nullable datetime, type nullable datetimezone, type nullable time, type nullable duration})),
+		    recordTypeFields = Type.RecordFields(Type.TableRow(Value.Type(tableWithOnlyPrimitiveTypes))),
+		    fieldNames = Record.FieldNames(recordTypeFields),
+		    fieldTypes = List.Transform(Record.ToList(recordTypeFields), each [Type]),
+		    pairs = List.Transform(List.Positions(fieldNames), (i) => {fieldNames{i}, (v) => if v = null or Value.Is(v, fieldTypes{i}) then v else error [Message = "El tipo del valor no coincide con el tipo de la columna.", Detail = v], fieldTypes{i}})
+		in
+		    Table.TransformColumns(Origen, pairs),
+		  #"Índice agregado" = Table.AddIndexColumn(#"Errores de coincidencia detectados", "Número de fila" ,1),
+		  #"Conservar errores" = Table.SelectRowsWithErrors(#"Índice agregado", {"Source.Name", "SEMANA", "MES", "AÑO", "BANDERA", "GRUPO", "CATEGORIA", "AREA_CCU", "GranArea_CCU", "SUBAREA_CCU", "Formato_M2", "EAN", "EAN_DESC", "CALIBRE", "CONTENIDO", "Unidades", "VentaValorizada", "Volumen_Lts", "pcio por uni", "Pciox vol"}),
+		  #"Columnas reordenadas" = Table.ReorderColumns(#"Conservar errores", {"Número de fila", "Source.Name", "SEMANA", "MES", "AÑO", "BANDERA", "GRUPO", "CATEGORIA", "AREA_CCU", "GranArea_CCU", "SUBAREA_CCU", "Formato_M2", "EAN", "EAN_DESC", "CALIBRE", "CONTENIDO", "Unidades", "VentaValorizada", "Volumen_Lts", "pcio por uni", "Pciox vol"})
+		in
+		  #"Columnas reordenadas"
+	lineageTag: 2d119004-f1ea-40ad-9972-debfc1ad71e6
+	queryGroup: 'Errores en las consultas: 14/11/2025 11:05:12'
+
+	annotation PBI_NavigationStepName = Navegación
+
+	annotation PBI_ResultType = Table
 

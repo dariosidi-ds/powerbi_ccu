@@ -139,7 +139,5 @@ table Calendario
 				in
 				    #"Tipo cambiado"
 
-	changedProperty = Name
-
 	annotation PBI_ResultType = Table
 

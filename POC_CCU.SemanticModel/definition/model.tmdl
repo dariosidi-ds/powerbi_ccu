@@ -22,9 +22,14 @@ queryGroup 'Transformar archivo de Data_vol (2)\Consultas auxiliares'
 
 	annotation PBI_QueryGroupOrder = 0
 
+/// Errores en las consultas cargadas en 14/11/2025 11:05:12.
+queryGroup 'Errores en las consultas: 14/11/2025 11:05:12'
+
+	annotation PBI_QueryGroupOrder = 4
+
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["Data_vol","Parámetro1","Transformar archivo de ejemplo","Archivo de ejemplo","Transformar archivo","Data_vol Unificado","Parámetro2","Transformar archivo de ejemplo (2)","Archivo de ejemplo (2)","Transformar archivo (2)","IM","Medida","Calendario","Target"]
+annotation PBI_QueryOrder = ["Data_vol","Parámetro1","Transformar archivo de ejemplo","Archivo de ejemplo","Transformar archivo","Data_vol Unificado","Parámetro2","Transformar archivo de ejemplo (2)","Archivo de ejemplo (2)","Transformar archivo (2)","IM","Medida","Calendario","Target","Errores en Data_vol"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
