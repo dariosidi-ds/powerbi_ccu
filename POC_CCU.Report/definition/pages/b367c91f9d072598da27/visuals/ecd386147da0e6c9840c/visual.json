@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "ecd386147da0e6c9840c",
   "position": {
     "x": 10,
@@ -97,7 +97,8 @@
                 }
               },
               "queryRef": "Medida.Parametro_num",
-              "nativeQueryRef": "Var Semana Anterior"
+              "nativeQueryRef": "Reciente (vs. última semana)",
+              "displayName": "Reciente (vs. última semana)"
             },
             {
               "field": {
@@ -111,7 +112,8 @@
                 }
               },
               "queryRef": "Medida.Var Tres Semanas",
-              "nativeQueryRef": "Var Tres Semanas"
+              "nativeQueryRef": "Persistente (vs. 3 semanas)",
+              "displayName": "Persistente (vs. 3 semanas)"
             },
             {
               "field": {
@@ -125,7 +127,8 @@
                 }
               },
               "queryRef": "Medida.Var Doce Semanas",
-              "nativeQueryRef": "Var Doce Semanas"
+              "nativeQueryRef": "Persistente (vs. 12 semanas)",
+              "displayName": "Persistente (vs. 12 semanas)"
             },
             {
               "field": {
@@ -139,7 +142,8 @@
                 }
               },
               "queryRef": "Medida.Var Semana Año Anterior",
-              "nativeQueryRef": "Var Tendencia Estimada"
+              "nativeQueryRef": "Tendencia Estimada",
+              "displayName": "Tendencia Estimada"
             },
             {
               "field": {
@@ -153,7 +157,8 @@
                 }
               },
               "queryRef": "Medida.Var Target",
-              "nativeQueryRef": "Var Target"
+              "nativeQueryRef": "Target",
+              "displayName": "Target"
             },
             {
               "field": {
@@ -185,6 +190,23 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Medida"
+                  }
+                },
+                "Property": "Var Semana Anterior"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
       }
     },
     "objects": {

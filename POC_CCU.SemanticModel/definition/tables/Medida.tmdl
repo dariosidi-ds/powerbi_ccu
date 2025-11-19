@@ -191,6 +191,7 @@ table Medida
 
 		annotation PBI_FormatHint = {"isDecimal":true}
 
+	/// El target acordado con el cliente es el objetivo de volumen o share que tenga el cliente para esa linea/retailer. En el caso en que no tenga un target definido, se propone mismo valor misma semana año-1.
 	measure 'Var Target' = ```
 			
 			

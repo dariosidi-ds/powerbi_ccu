@@ -1143,16 +1143,6 @@ cultureInfo es-AR
 			          }
 			        },
 			        {
-			          "type": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
 			          "style": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -1174,6 +1164,16 @@ cultureInfo es-AR
 			        },
 			        {
 			          "strain": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "cast": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -1782,6 +1782,16 @@ cultureInfo es-AR
 			          "var semana anterior": {
 			            "State": "Generated"
 			          }
+			        },
+			        {
+			          "Reciente (vs. última semana)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -1883,6 +1893,16 @@ cultureInfo es-AR
 			          "var tres semanas": {
 			            "State": "Generated"
 			          }
+			        },
+			        {
+			          "Persistente (vs. 3 semanas)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -1924,6 +1944,16 @@ cultureInfo es-AR
 			        {
 			          "var doce semanas": {
 			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Persistente (vs. 12 semanas)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -2087,6 +2117,16 @@ cultureInfo es-AR
 			          "var tendencia estimada": {
 			            "State": "Generated"
 			          }
+			        },
+			        {
+			          "Tendencia Estimada": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -2211,6 +2251,16 @@ cultureInfo es-AR
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "Target": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -3342,16 +3392,6 @@ cultureInfo es-AR
 			          }
 			        },
 			        {
-			          "type": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.476
-			          }
-			        },
-			        {
 			          "style": {
 			            "Type": "Noun",
 			            "State": "Suggested",
@@ -3373,6 +3413,16 @@ cultureInfo es-AR
 			        },
 			        {
 			          "strain": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "cast": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
@@ -3428,174 +3478,1777 @@ cultureInfo es-AR
 			          }
 			        }
 			      ]
+			    },
+			    "medida.volumen_semana_anterior_P_Vol": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medida",
+			          "ConceptualProperty": "Volumen Semana Anterior P_Vol"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "volumen semana anterior P_Vol": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.PPL_doce_semanas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medida",
+			          "ConceptualProperty": "PPL Doce Semanas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "PPL doce semanas": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.var_PLL_doce_semanas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medida",
+			          "ConceptualProperty": "Var PLL Doce Semanas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "var PLL doce semanas": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.aporte_vol_grupo": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medida",
+			          "ConceptualProperty": "Aporte Vol Grupo"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "aporte vol grupo": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "medida.diferencia_vs_real": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medida",
+			          "ConceptualProperty": "Diferencia_vs_Real"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "diferencia vs real": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Diferencia_vs_Real": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "medida.pendiente_b": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medida",
+			          "ConceptualProperty": "Pendiente_b"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "pendiente b": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Pendiente_b": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "medida.interseccion_a": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medida",
+			          "ConceptualProperty": "Interseccion_a"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "interseccion a": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Interseccion_a": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "medida.tendencia_estimada": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medida",
+			          "ConceptualProperty": "Tendencia_Estimada"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tendencia estimada": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Tendencia_Estimada": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "medida.volumen_tendencia_estimada": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Medida",
+			          "ConceptualProperty": "Volumen Tendencia Estimada"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "volumen tendencia estimada": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "modelo_medida": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Modelo Medidas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "modelo medida": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "modelo_medida.ID": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Modelo Medidas",
+			          "ConceptualProperty": "ID"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ID": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "NameType": "Identifier"
+			    },
+			    "modelo_medida.name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Modelo Medidas",
+			          "ConceptualProperty": "Name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "title": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "NameType": "Name"
+			    },
+			    "modelo_medida.table": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Modelo Medidas",
+			          "ConceptualProperty": "Table"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "table": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "tabletop": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "bench": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "board": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "counter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "stand": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "slab": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "desk": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "stall": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "table top": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "spreadsheet": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "modelo_medida.description": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Modelo Medidas",
+			          "ConceptualProperty": "Description"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "description": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "appearance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "descriptor": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "explanation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "specification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "account": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "overview": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "report": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "modelo_medida.data_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Modelo Medidas",
+			          "ConceptualProperty": "DataType"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "data type": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DataType": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "type": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "data genre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "data manner": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "data variety": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "genre": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "manner": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "variety": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "data brand": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "data class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "data kind": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "data style": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "modelo_medida.expression": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Modelo Medidas",
+			          "ConceptualProperty": "Expression"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "expression": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "appearance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "mien": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "countenance": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "face": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "air": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "manifestation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "illustration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "demonstration": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "representation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        },
+			        {
+			          "articulation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "modelo_medida.format_string": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Modelo Medidas",
+			          "ConceptualProperty": "FormatString"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "format string": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "FormatString": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "string": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "format filament": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "filament": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "format cord": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "format thread": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "format twine": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "format rope": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "cord": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "thread": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "twine": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "rope": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        }
+			      ]
+			    },
+			    "modelo_medida.is_hidden": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Modelo Medidas",
+			          "ConceptualProperty": "IsHidden"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "is hidden": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "IsHidden": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "modelo_medida.state": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Modelo Medidas",
+			          "ConceptualProperty": "State"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "state": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "location": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "province": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "territory": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "nation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "condition": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "country": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ]
+			    },
+			    "modelo_medida.kpiid": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Modelo Medidas",
+			          "ConceptualProperty": "KPIID"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "kpiid": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "modelo_medida.is_simple_measure": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Modelo Medidas",
+			          "ConceptualProperty": "IsSimpleMeasure"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "is simple measure": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "IsSimpleMeasure": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "measure": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "simple measure": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "is simple degree": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "is simple quantity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "is simple quota": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "is simple extent": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "simple degree": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "simple quantity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "simple quota": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "simple extent": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "is simple amount": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "is simple portion": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
+			    },
+			    "modelo_medida.display_folder": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Modelo Medidas",
+			          "ConceptualProperty": "DisplayFolder"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "display folder": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DisplayFolder": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "folder": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "display binder": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "binder": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "display file": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "file": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "display dossier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "display wallet": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "display organizer": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "display portfolio": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "display holder": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "dossier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.466
+			          }
+			        }
+			      ]
+			    },
+			    "modelo_medida.detail_rows_definition": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Modelo Medidas",
+			          "ConceptualProperty": "DetailRowsDefinition"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "detail rows definition": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "detail row definition": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.78
+			          }
+			        },
+			        {
+			          "DetailRowsDefinition": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "definition": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "rows definition": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "row definition": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.7566
+			          }
+			        },
+			        {
+			          "detail row description": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "detail row explanation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "detail row classification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "detail row characterization": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "detail row designation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "detail row delineation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "detail row demarcation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "row description": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "row explanation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "row classification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        }
+			      ]
+			    },
+			    "modelo_medida.data_category": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Modelo Medidas",
+			          "ConceptualProperty": "DataCategory"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "data category": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DataCategory": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "category": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "data classification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "classification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "data class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "data group": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "data grouping": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "data kind": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "grouping": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "kind": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "information category": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        }
+			      ]
+			    },
+			    "modelo_medida.format_string_definition": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Modelo Medidas",
+			          "ConceptualProperty": "FormatStringDefinition"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "format string definition": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "FormatStringDefinition": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "definition": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "string definition": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "format string description": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "format string explanation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "format string classification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "format string characterization": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "format string designation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "format string delineation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "format string demarcation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "string description": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "string explanation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "string classification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        }
+			      ]
+			    },
+			    "modelo_medida.lineage_tag": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Modelo Medidas",
+			          "ConceptualProperty": "LineageTag"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "lineage tag": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "LineageTag": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "tag": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "lineage identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "lineage device": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "device": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "lineage label": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "lineage ticket": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "lineage tab": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "lineage docket": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "lineage code": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "lineage chip": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "lineage mark": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
-			    "calendario_mesaño_jerarquía_has_mesaño": {
-			      "Binding": {
-			        "ConceptualEntity": "Calendario"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "calendario.mesaño_jerarquía": {
-			          "Target": {
-			            "Entity": "calendario.mesaño_jerarquía"
-			          }
-			        },
-			        "calendario.mesaño_jerarquía.mesaño": {
-			          "Target": {
-			            "Entity": "calendario.mesaño_jerarquía.mesaño"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "calendario.mesaño_jerarquía"
-			            },
-			            "Object": {
-			              "Role": "calendario.mesaño_jerarquía.mesaño"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "mesaño_jerarquías_have_mesaños"
-			        }
-			      ]
-			    },
-			    "calendario_mesaño_me_has_calendario_mesaño_día": {
-			      "Binding": {
-			        "ConceptualEntity": "Calendario"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "calendario.mesaño.me": {
-			          "Target": {
-			            "Entity": "calendario.mesaño.me"
-			          }
-			        },
-			        "calendario.mesaño.día": {
-			          "Target": {
-			            "Entity": "calendario.mesaño.día"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "calendario.mesaño.me"
-			            },
-			            "Object": {
-			              "Role": "calendario.mesaño.día"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "me_have_días"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "calendario.mesaño.día"
-			            },
-			            "Object": {
-			              "Role": "calendario.mesaño.me"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "días_have_me"
-			        },
-			        {
-			          "Preposition": {
-			            "Subject": {
-			              "Role": "calendario.mesaño.día"
-			            },
-			            "Prepositions": [
-			              {
-			                "in": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "calendario.mesaño.me"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "días_are_in_me2"
-			        }
-			      ]
-			    },
-			    "calendario_mesaño_trimestre_has_calendario_mesaño_me": {
-			      "Binding": {
-			        "ConceptualEntity": "Calendario"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "calendario.mesaño.trimestre": {
-			          "Target": {
-			            "Entity": "calendario.mesaño.trimestre"
-			          }
-			        },
-			        "calendario.mesaño.me": {
-			          "Target": {
-			            "Entity": "calendario.mesaño.me"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "calendario.mesaño.trimestre"
-			            },
-			            "Object": {
-			              "Role": "calendario.mesaño.me"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "trimestres_have_me"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "calendario.mesaño.me"
-			            },
-			            "Object": {
-			              "Role": "calendario.mesaño.trimestre"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "me_have_trimestres"
-			        },
-			        {
-			          "Preposition": {
-			            "Subject": {
-			              "Role": "calendario.mesaño.me"
-			            },
-			            "Prepositions": [
-			              {
-			                "in": {
-			                  "State": "Generated"
-			                }
-			              }
-			            ],
-			            "Object": {
-			              "Role": "calendario.mesaño.trimestre"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "me_are_in_trimestres2"
-			        }
-			      ]
-			    },
 			    "calendario_mesaño_año_has_calendario_mesaño_trimestre": {
 			      "Binding": {
 			        "ConceptualEntity": "Calendario"
@@ -3856,7 +5509,7 @@ cultureInfo es-AR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "me_have_días1"
+			          "ID": "me_have_días"
 			        },
 			        {
 			          "Attribute": {
@@ -3869,7 +5522,7 @@ cultureInfo es-AR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "días_have_me1"
+			          "ID": "días_have_me"
 			        },
 			        {
 			          "Preposition": {
@@ -3922,7 +5575,7 @@ cultureInfo es-AR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "trimestres_have_me1"
+			          "ID": "trimestres_have_me"
 			        },
 			        {
 			          "Attribute": {
@@ -3935,7 +5588,7 @@ cultureInfo es-AR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "me_have_trimestres1"
+			          "ID": "me_have_trimestres"
 			        },
 			        {
 			          "Preposition": {
@@ -4219,7 +5872,7 @@ cultureInfo es-AR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "me_have_días2"
+			          "ID": "me_have_días1"
 			        },
 			        {
 			          "Attribute": {
@@ -4232,7 +5885,7 @@ cultureInfo es-AR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "días_have_me2"
+			          "ID": "días_have_me1"
 			        },
 			        {
 			          "Preposition": {
@@ -4285,7 +5938,7 @@ cultureInfo es-AR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "trimestres_have_me2"
+			          "ID": "trimestres_have_me1"
 			        },
 			        {
 			          "Attribute": {
@@ -4298,7 +5951,7 @@ cultureInfo es-AR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "me_have_trimestres2"
+			          "ID": "me_have_trimestres1"
 			        },
 			        {
 			          "Preposition": {
@@ -4688,6 +6341,890 @@ cultureInfo es-AR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "im_have_data_vols"
+			        }
+			      ]
+			    },
+			    "modelo_medida_has_lineage_tag": {
+			      "Binding": {
+			        "ConceptualEntity": "Modelo Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "modelo_medida": {
+			          "Target": {
+			            "Entity": "modelo_medida"
+			          }
+			        },
+			        "modelo_medida.lineage_tag": {
+			          "Target": {
+			            "Entity": "modelo_medida.lineage_tag"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "modelo_medida"
+			            },
+			            "Object": {
+			              "Role": "modelo_medida.lineage_tag"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "modelo_medidas_have_lineage_tags"
+			        }
+			      ]
+			    },
+			    "modelo_medida_has_format_string_definition": {
+			      "Binding": {
+			        "ConceptualEntity": "Modelo Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "modelo_medida": {
+			          "Target": {
+			            "Entity": "modelo_medida"
+			          }
+			        },
+			        "modelo_medida.format_string_definition": {
+			          "Target": {
+			            "Entity": "modelo_medida.format_string_definition"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "modelo_medida"
+			            },
+			            "Object": {
+			              "Role": "modelo_medida.format_string_definition"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "modelo_medidas_have_format_string_definitions"
+			        }
+			      ]
+			    },
+			    "modelo_medida_has_data_category": {
+			      "Binding": {
+			        "ConceptualEntity": "Modelo Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "modelo_medida": {
+			          "Target": {
+			            "Entity": "modelo_medida"
+			          }
+			        },
+			        "modelo_medida.data_category": {
+			          "Target": {
+			            "Entity": "modelo_medida.data_category"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "modelo_medida"
+			            },
+			            "Object": {
+			              "Role": "modelo_medida.data_category"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "modelo_medidas_have_data_categories"
+			        }
+			      ]
+			    },
+			    "modelo_medida_has_detail_rows_definition": {
+			      "Binding": {
+			        "ConceptualEntity": "Modelo Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "modelo_medida": {
+			          "Target": {
+			            "Entity": "modelo_medida"
+			          }
+			        },
+			        "modelo_medida.detail_rows_definition": {
+			          "Target": {
+			            "Entity": "modelo_medida.detail_rows_definition"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "modelo_medida"
+			            },
+			            "Object": {
+			              "Role": "modelo_medida.detail_rows_definition"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "modelo_medidas_have_detail_rows_definitions"
+			        }
+			      ]
+			    },
+			    "modelo_medida_has_display_folder": {
+			      "Binding": {
+			        "ConceptualEntity": "Modelo Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "modelo_medida": {
+			          "Target": {
+			            "Entity": "modelo_medida"
+			          }
+			        },
+			        "modelo_medida.display_folder": {
+			          "Target": {
+			            "Entity": "modelo_medida.display_folder"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "modelo_medida"
+			            },
+			            "Object": {
+			              "Role": "modelo_medida.display_folder"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "modelo_medidas_have_display_folders"
+			        },
+			        {
+			          "Verb": {
+			            "Subject": {
+			              "Role": "modelo_medida.display_folder"
+			            },
+			            "Verbs": [
+			              {
+			                "fold": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "modelo_medida"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.75,
+			          "ID": "display_folders_fold_modelo_medidas"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "modelo_medida.display_folder"
+			            },
+			            "Object": {
+			              "Role": "modelo_medida"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "display_folders_have_modelo_medidas"
+			        }
+			      ]
+			    },
+			    "modelo_medida_has_is_simple_measure": {
+			      "Binding": {
+			        "ConceptualEntity": "Modelo Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "modelo_medida": {
+			          "Target": {
+			            "Entity": "modelo_medida"
+			          }
+			        },
+			        "modelo_medida.is_simple_measure": {
+			          "Target": {
+			            "Entity": "modelo_medida.is_simple_measure"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "modelo_medida"
+			            },
+			            "Object": {
+			              "Role": "modelo_medida.is_simple_measure"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "modelo_medidas_have_is_simple_measures"
+			        }
+			      ]
+			    },
+			    "modelo_medida_has_kpiid": {
+			      "Binding": {
+			        "ConceptualEntity": "Modelo Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "modelo_medida": {
+			          "Target": {
+			            "Entity": "modelo_medida"
+			          }
+			        },
+			        "modelo_medida.kpiid": {
+			          "Target": {
+			            "Entity": "modelo_medida.kpiid"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "modelo_medida"
+			            },
+			            "Object": {
+			              "Role": "modelo_medida.kpiid"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "modelo_medidas_have_kpiids"
+			        }
+			      ]
+			    },
+			    "modelo_medida_has_state": {
+			      "Binding": {
+			        "ConceptualEntity": "Modelo Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "modelo_medida": {
+			          "Target": {
+			            "Entity": "modelo_medida"
+			          }
+			        },
+			        "modelo_medida.state": {
+			          "Target": {
+			            "Entity": "modelo_medida.state"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "modelo_medida"
+			            },
+			            "Object": {
+			              "Role": "modelo_medida.state"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "modelo_medidas_have_states"
+			        }
+			      ]
+			    },
+			    "modelo_medida_has_is_hidden": {
+			      "Binding": {
+			        "ConceptualEntity": "Modelo Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "modelo_medida": {
+			          "Target": {
+			            "Entity": "modelo_medida"
+			          }
+			        },
+			        "modelo_medida.is_hidden": {
+			          "Target": {
+			            "Entity": "modelo_medida.is_hidden"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "modelo_medida"
+			            },
+			            "Object": {
+			              "Role": "modelo_medida.is_hidden"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "modelo_medidas_have_is_hidden"
+			        }
+			      ]
+			    },
+			    "modelo_medida_has_format_string": {
+			      "Binding": {
+			        "ConceptualEntity": "Modelo Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "modelo_medida": {
+			          "Target": {
+			            "Entity": "modelo_medida"
+			          }
+			        },
+			        "modelo_medida.format_string": {
+			          "Target": {
+			            "Entity": "modelo_medida.format_string"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "modelo_medida"
+			            },
+			            "Object": {
+			              "Role": "modelo_medida.format_string"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "modelo_medidas_have_format_strings"
+			        }
+			      ]
+			    },
+			    "modelo_medida_has_expression": {
+			      "Binding": {
+			        "ConceptualEntity": "Modelo Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "modelo_medida": {
+			          "Target": {
+			            "Entity": "modelo_medida"
+			          }
+			        },
+			        "modelo_medida.expression": {
+			          "Target": {
+			            "Entity": "modelo_medida.expression"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "modelo_medida"
+			            },
+			            "Object": {
+			              "Role": "modelo_medida.expression"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "modelo_medidas_have_expressions"
+			        }
+			      ]
+			    },
+			    "modelo_medida_has_data_type": {
+			      "Binding": {
+			        "ConceptualEntity": "Modelo Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "modelo_medida": {
+			          "Target": {
+			            "Entity": "modelo_medida"
+			          }
+			        },
+			        "modelo_medida.data_type": {
+			          "Target": {
+			            "Entity": "modelo_medida.data_type"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "modelo_medida"
+			            },
+			            "Object": {
+			              "Role": "modelo_medida.data_type"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "modelo_medidas_have_data_types"
+			        }
+			      ]
+			    },
+			    "modelo_medida_has_description": {
+			      "Binding": {
+			        "ConceptualEntity": "Modelo Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "modelo_medida": {
+			          "Target": {
+			            "Entity": "modelo_medida"
+			          }
+			        },
+			        "modelo_medida.description": {
+			          "Target": {
+			            "Entity": "modelo_medida.description"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "modelo_medida"
+			            },
+			            "Object": {
+			              "Role": "modelo_medida.description"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "modelo_medidas_have_descriptions"
+			        }
+			      ]
+			    },
+			    "modelo_medida_has_table": {
+			      "Binding": {
+			        "ConceptualEntity": "Modelo Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "modelo_medida": {
+			          "Target": {
+			            "Entity": "modelo_medida"
+			          }
+			        },
+			        "modelo_medida.table": {
+			          "Target": {
+			            "Entity": "modelo_medida.table"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "modelo_medida"
+			            },
+			            "Object": {
+			              "Role": "modelo_medida.table"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "modelo_medidas_have_tables"
+			        }
+			      ]
+			    },
+			    "modelo_medida_has_name": {
+			      "Binding": {
+			        "ConceptualEntity": "Modelo Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "modelo_medida": {
+			          "Target": {
+			            "Entity": "modelo_medida"
+			          }
+			        },
+			        "modelo_medida.name": {
+			          "Target": {
+			            "Entity": "modelo_medida.name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "modelo_medida"
+			            },
+			            "Object": {
+			              "Role": "modelo_medida.name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "modelo_medidas_have_names"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "modelo_medida"
+			            },
+			            "Name": {
+			              "Role": "modelo_medida.name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "names_are_names_IDs_of_modelo_medidas"
+			        }
+			      ]
+			    },
+			    "modelo_medida_has_ID": {
+			      "Binding": {
+			        "ConceptualEntity": "Modelo Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "modelo_medida": {
+			          "Target": {
+			            "Entity": "modelo_medida"
+			          }
+			        },
+			        "modelo_medida.ID": {
+			          "Target": {
+			            "Entity": "modelo_medida.ID"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "modelo_medida"
+			            },
+			            "Object": {
+			              "Role": "modelo_medida.ID"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "modelo_medidas_have_ID"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "modelo_medida"
+			            },
+			            "Name": {
+			              "Role": "modelo_medida.ID"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "ID_are_names_IDs_of_modelo_medidas"
+			        }
+			      ]
+			    },
+			    "data_vol_has_medida_volumen_tendencia_estimada": {
+			      "Binding": {
+			        "ConceptualEntity": "Data_vol"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_vol": {
+			          "Target": {
+			            "Entity": "data_vol"
+			          }
+			        },
+			        "medida.volumen_tendencia_estimada": {
+			          "Target": {
+			            "Entity": "medida.volumen_tendencia_estimada"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_vol"
+			            },
+			            "Object": {
+			              "Role": "medida.volumen_tendencia_estimada"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_vols_have_volumen_tendencia_estimada"
+			        }
+			      ]
+			    },
+			    "medida_has_tendencia_estimada": {
+			      "Binding": {
+			        "ConceptualEntity": "Medida"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "medida": {
+			          "Target": {
+			            "Entity": "medida"
+			          }
+			        },
+			        "medida.tendencia_estimada": {
+			          "Target": {
+			            "Entity": "medida.tendencia_estimada"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "medida"
+			            },
+			            "Object": {
+			              "Role": "medida.tendencia_estimada"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "medidas_have_tendencia_estimada"
+			        }
+			      ]
+			    },
+			    "medida_has_interseccion_a": {
+			      "Binding": {
+			        "ConceptualEntity": "Medida"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "medida": {
+			          "Target": {
+			            "Entity": "medida"
+			          }
+			        },
+			        "medida.interseccion_a": {
+			          "Target": {
+			            "Entity": "medida.interseccion_a"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "medida"
+			            },
+			            "Object": {
+			              "Role": "medida.interseccion_a"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "medidas_have_interseccion_a"
+			        }
+			      ]
+			    },
+			    "medida_has_pendiente_b": {
+			      "Binding": {
+			        "ConceptualEntity": "Medida"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "medida": {
+			          "Target": {
+			            "Entity": "medida"
+			          }
+			        },
+			        "medida.pendiente_b": {
+			          "Target": {
+			            "Entity": "medida.pendiente_b"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "medida"
+			            },
+			            "Object": {
+			              "Role": "medida.pendiente_b"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "medidas_have_pendiente_b"
+			        }
+			      ]
+			    },
+			    "medida_has_diferencia_vs_real": {
+			      "Binding": {
+			        "ConceptualEntity": "Medida"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "medida": {
+			          "Target": {
+			            "Entity": "medida"
+			          }
+			        },
+			        "medida.diferencia_vs_real": {
+			          "Target": {
+			            "Entity": "medida.diferencia_vs_real"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "medida"
+			            },
+			            "Object": {
+			              "Role": "medida.diferencia_vs_real"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "medidas_have_diferencia_vs_real"
+			        }
+			      ]
+			    },
+			    "data_vol_has_medida_aporte_vol_grupo": {
+			      "Binding": {
+			        "ConceptualEntity": "Data_vol"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_vol": {
+			          "Target": {
+			            "Entity": "data_vol"
+			          }
+			        },
+			        "medida.aporte_vol_grupo": {
+			          "Target": {
+			            "Entity": "medida.aporte_vol_grupo"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_vol"
+			            },
+			            "Object": {
+			              "Role": "medida.aporte_vol_grupo"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_vols_have_aporte_vol_grupo"
+			        }
+			      ]
+			    },
+			    "data_vol_has_medida_var_PLL_doce_semanas": {
+			      "Binding": {
+			        "ConceptualEntity": "Data_vol"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_vol": {
+			          "Target": {
+			            "Entity": "data_vol"
+			          }
+			        },
+			        "medida.var_PLL_doce_semanas": {
+			          "Target": {
+			            "Entity": "medida.var_PLL_doce_semanas"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_vol"
+			            },
+			            "Object": {
+			              "Role": "medida.var_PLL_doce_semanas"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_vols_have_var_PLL_doce_semanas"
+			        }
+			      ]
+			    },
+			    "data_vol_has_medida_PPL_doce_semanas": {
+			      "Binding": {
+			        "ConceptualEntity": "Data_vol"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_vol": {
+			          "Target": {
+			            "Entity": "data_vol"
+			          }
+			        },
+			        "medida.PPL_doce_semanas": {
+			          "Target": {
+			            "Entity": "medida.PPL_doce_semanas"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_vol"
+			            },
+			            "Object": {
+			              "Role": "medida.PPL_doce_semanas"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_vols_have_PPL_doce_semanas"
+			        }
+			      ]
+			    },
+			    "data_vol_has_medida_volumen_semana_anterior_P_Vol": {
+			      "Binding": {
+			        "ConceptualEntity": "Data_vol"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_vol": {
+			          "Target": {
+			            "Entity": "data_vol"
+			          }
+			        },
+			        "medida.volumen_semana_anterior_P_Vol": {
+			          "Target": {
+			            "Entity": "medida.volumen_semana_anterior_P_Vol"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_vol"
+			            },
+			            "Object": {
+			              "Role": "medida.volumen_semana_anterior_P_Vol"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_vols_have_volumen_semana_anterior_P_Vol"
 			        }
 			      ]
 			    },
@@ -5417,15 +7954,15 @@ cultureInfo es-AR
 			        }
 			      ]
 			    },
-			    "data_vol_has_medida_var_tendencia_estimada_num": {
+			    "medida_has_var_tendencia_estimada_num": {
 			      "Binding": {
-			        "ConceptualEntity": "Data_vol"
+			        "ConceptualEntity": "Medida"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "data_vol": {
+			        "medida": {
 			          "Target": {
-			            "Entity": "data_vol"
+			            "Entity": "medida"
 			          }
 			        },
 			        "medida.var_tendencia_estimada_num": {
@@ -5438,7 +7975,7 @@ cultureInfo es-AR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "data_vol"
+			              "Role": "medida"
 			            },
 			            "Object": {
 			              "Role": "medida.var_tendencia_estimada_num"
@@ -5446,19 +7983,19 @@ cultureInfo es-AR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "data_vols_have_var_tendencia_estimada_num"
+			          "ID": "medidas_have_var_tendencia_estimada_num"
 			        }
 			      ]
 			    },
-			    "data_vol_has_medida_var_tendencia_estimada": {
+			    "medida_has_var_tendencia_estimada": {
 			      "Binding": {
-			        "ConceptualEntity": "Data_vol"
+			        "ConceptualEntity": "Medida"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "data_vol": {
+			        "medida": {
 			          "Target": {
-			            "Entity": "data_vol"
+			            "Entity": "medida"
 			          }
 			        },
 			        "medida.var_tendencia_estimada": {
@@ -5471,7 +8008,7 @@ cultureInfo es-AR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "data_vol"
+			              "Role": "medida"
 			            },
 			            "Object": {
 			              "Role": "medida.var_tendencia_estimada"
@@ -5479,7 +8016,7 @@ cultureInfo es-AR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "data_vols_have_var_tendencia_estimada"
+			          "ID": "medidas_have_var_tendencia_estimada"
 			        }
 			      ]
 			    },
@@ -5513,39 +8050,6 @@ cultureInfo es-AR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "data_vols_have_var_MismaSemanaAnoAnterior"
-			        }
-			      ]
-			    },
-			    "data_vol_has_medida_volumen_tendencia_estimada": {
-			      "Binding": {
-			        "ConceptualEntity": "Data_vol"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "data_vol": {
-			          "Target": {
-			            "Entity": "data_vol"
-			          }
-			        },
-			        "medida.volumen_tendencia_estimada": {
-			          "Target": {
-			            "Entity": "medida.volumen_tendencia_estimada"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "data_vol"
-			            },
-			            "Object": {
-			              "Role": "medida.volumen_tendencia_estimada"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "data_vols_have_volumen_tendencia_estimada"
 			        }
 			      ]
 			    },
@@ -5780,15 +8284,15 @@ cultureInfo es-AR
 			        }
 			      ]
 			    },
-			    "target_has_medida_indicador_rojos": {
+			    "medida_has_indicador_rojos": {
 			      "Binding": {
-			        "ConceptualEntity": "Target"
+			        "ConceptualEntity": "Medida"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "target": {
+			        "medida": {
 			          "Target": {
-			            "Entity": "target"
+			            "Entity": "medida"
 			          }
 			        },
 			        "medida.indicador_rojos": {
@@ -5801,7 +8305,7 @@ cultureInfo es-AR
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "target"
+			              "Role": "medida"
 			            },
 			            "Object": {
 			              "Role": "medida.indicador_rojos"
@@ -5809,73 +8313,7 @@ cultureInfo es-AR
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "targets_have_indicador_rojos"
-			        }
-			      ]
-			    },
-			    "data_vol_has_medida_indicador_rojos": {
-			      "Binding": {
-			        "ConceptualEntity": "Data_vol"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "data_vol": {
-			          "Target": {
-			            "Entity": "data_vol"
-			          }
-			        },
-			        "medida.indicador_rojos": {
-			          "Target": {
-			            "Entity": "medida.indicador_rojos"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "data_vol"
-			            },
-			            "Object": {
-			              "Role": "medida.indicador_rojos"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "data_vols_have_indicador_rojos"
-			        }
-			      ]
-			    },
-			    "calendario_has_medida_indicador_rojos": {
-			      "Binding": {
-			        "ConceptualEntity": "Calendario"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "calendario": {
-			          "Target": {
-			            "Entity": "calendario"
-			          }
-			        },
-			        "medida.indicador_rojos": {
-			          "Target": {
-			            "Entity": "medida.indicador_rojos"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "calendario"
-			            },
-			            "Object": {
-			              "Role": "medida.indicador_rojos"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "calendarios_have_indicador_rojos"
+			          "ID": "medidas_have_indicador_rojos"
 			        }
 			      ]
 			    },
@@ -7892,6 +10330,51 @@ cultureInfo es-AR
 			        }
 			      ]
 			    },
+			    "modelo_medida_in_state": {
+			      "Binding": {
+			        "ConceptualEntity": "Modelo Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "modelo_medida": {
+			          "Target": {
+			            "Entity": "modelo_medida"
+			          }
+			        },
+			        "modelo_medida.state": {
+			          "Target": {
+			            "Entity": "modelo_medida.state"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "modelo_medida.state"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "modelo_medida"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "modelo_medida.state"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "modelo_medidas_are_in_states"
+			        }
+			      ]
+			    },
 			    "data_vol_in_gran_area_CCU": {
 			      "Binding": {
 			        "ConceptualEntity": "Data_vol"
@@ -7979,6 +10462,221 @@ cultureInfo es-AR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "data_vols_are_in_area_ccus"
+			        }
+			      ]
+			    },
+			    "modelo_medida_is_hidden": {
+			      "Binding": {
+			        "ConceptualEntity": "Modelo Medidas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "modelo_medida": {
+			          "Target": {
+			            "Entity": "modelo_medida"
+			          }
+			        },
+			        "modelo_medida.is_hidden": {
+			          "Target": {
+			            "Entity": "modelo_medida.is_hidden"
+			          }
+			        }
+			      },
+			      "Conditions": [
+			        {
+			          "Target": {
+			            "Role": "modelo_medida.is_hidden"
+			          },
+			          "Operator": "Equals",
+			          "Value": {
+			            "Boolean": [
+			              true
+			            ]
+			          }
+			        }
+			      ],
+			      "Phrasings": [
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "modelo_medida"
+			            },
+			            "Adjectives": [
+			              {
+			                "hidden": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ]
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "some_modelo_medidas_are_hidden_modelo_medidas"
+			        }
+			      ]
+			    },
+			    "calendario_mesaño_trimestre_has_calendario_mesaño_me": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario.mesaño.trimestre": {
+			          "Target": {
+			            "Entity": "calendario.mesaño.trimestre"
+			          }
+			        },
+			        "calendario.mesaño.me": {
+			          "Target": {
+			            "Entity": "calendario.mesaño.me"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario.mesaño.trimestre"
+			            },
+			            "Object": {
+			              "Role": "calendario.mesaño.me"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "trimestres_have_me2"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario.mesaño.me"
+			            },
+			            "Object": {
+			              "Role": "calendario.mesaño.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "me_have_trimestres2"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "calendario.mesaño.me"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "calendario.mesaño.trimestre"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "me_are_in_trimestres2"
+			        }
+			      ]
+			    },
+			    "calendario_mesaño_me_has_calendario_mesaño_día": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario.mesaño.me": {
+			          "Target": {
+			            "Entity": "calendario.mesaño.me"
+			          }
+			        },
+			        "calendario.mesaño.día": {
+			          "Target": {
+			            "Entity": "calendario.mesaño.día"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario.mesaño.me"
+			            },
+			            "Object": {
+			              "Role": "calendario.mesaño.día"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "me_have_días2"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario.mesaño.día"
+			            },
+			            "Object": {
+			              "Role": "calendario.mesaño.me"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "días_have_me2"
+			        },
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "calendario.mesaño.día"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "calendario.mesaño.me"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "días_are_in_me2"
+			        }
+			      ]
+			    },
+			    "calendario_mesaño_jerarquía_has_mesaño": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendario"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendario.mesaño_jerarquía": {
+			          "Target": {
+			            "Entity": "calendario.mesaño_jerarquía"
+			          }
+			        },
+			        "calendario.mesaño_jerarquía.mesaño": {
+			          "Target": {
+			            "Entity": "calendario.mesaño_jerarquía.mesaño"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendario.mesaño_jerarquía"
+			            },
+			            "Object": {
+			              "Role": "calendario.mesaño_jerarquía.mesaño"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "mesaño_jerarquías_have_mesaños"
 			        }
 			      ]
 			    }

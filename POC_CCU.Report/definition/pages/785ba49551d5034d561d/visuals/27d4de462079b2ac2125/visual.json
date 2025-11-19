@@ -116,6 +116,13 @@
                           "Value": "'Tendencia_Estimada'"
                         }
                       }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Var Target'"
+                        }
+                      }
                     ]
                   ]
                 }
