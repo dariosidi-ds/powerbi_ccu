@@ -259,6 +259,7 @@ table Medida
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	/// ¿Cuánto cambia en promedio mi volumen por cada semana que pasa?
 	measure Pendiente_b =
 			
 			VAR Tabla =

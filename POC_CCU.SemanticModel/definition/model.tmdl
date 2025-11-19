@@ -42,6 +42,7 @@ ref table LocalDateTable_070bbef8-dad1-41f8-bfab-88dc37271cac
 ref table LocalDateTable_c12000d8-47bc-46ab-8aa6-9b9619f2c171
 ref table LocalDateTable_0496ee4f-8a73-4bb8-aece-580020ff7ffd
 ref table Target
+ref table 'Modelo Medidas'
 
 ref cultureInfo es-AR
 
