@@ -154,7 +154,7 @@ table Medida
 
 	measure '%Var MismaSemanaAnoAnterior' =
 			
-			DIVIDE([Volumen_Lts]-[Volumen Target Estimado],[Volumen Target Estimado],0)
+			DIVIDE([Volumen_Lts]-[Volumen Tendencia Estimada],[Volumen Tendencia Estimada],0)
 		formatString: 0.00
 		lineageTag: 9a2a7299-7914-47d6-aa39-4e2f277a9469
 
@@ -176,7 +176,7 @@ table Medida
 			
 			VAR _blank=ISBLANK (SELECTEDVALUE(Target[TARGET]))
 			RETURN
-			IF(SELECTEDVALUE(Target[TARGET])=BLANK(),[Volumen Target Estimado],SELECTEDVALUE(Target[TARGET]))
+			IF(SELECTEDVALUE(Target[TARGET])=BLANK(),[Volumen Tendencia Estimada],SELECTEDVALUE(Target[TARGET]))
 			
 			
 			
@@ -303,6 +303,7 @@ table Medida
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	/// Tendencia estimada: es una regresión a nivel línea, una f(periodos;share/volumen)  el share o el volumen es dependiendo que tendencia se está evaluando. Para el periodo t (que seria la semana actual) se estima el valor esperado y se compara contra el real.
 	measure Tendencia_Estimada =
 			
 			VAR x_t = MAX(Calendario[Ano-Sem_NUM])  -- semana actual del contexto
@@ -314,7 +315,7 @@ table Medida
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Volumen Target Estimado' = ```
+	measure 'Volumen Tendencia Estimada' = ```
 			
 			VAR SemanaActual = MAX(Calendario[Ano-Sem_NUM])
 			VAR SemanaAnterior = SemanaActual - 100

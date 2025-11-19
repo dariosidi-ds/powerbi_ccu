@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "d13ebc3fc8fb105086e1",
   "position": {
     "x": 0,
@@ -92,7 +92,7 @@
                       "Entity": "Medida"
                     }
                   },
-                  "Property": "Volumen Target Estimado"
+                  "Property": "Volumen Tendencia Estimada"
                 }
               },
               "queryRef": "Medida.Volumen Semana Año Anterior",

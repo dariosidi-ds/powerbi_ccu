@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "b35a4e8b88e914e8480b",
   "position": {
     "x": 10,
@@ -106,13 +106,13 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Calendario"
+                    "Entity": "Medida"
                   }
                 },
-                "Property": "Ano-Sem_NUM"
+                "Property": "Tendencia_Estimada"
               }
             },
             "direction": "Descending"

@@ -1,0 +1,129 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "27d4de462079b2ac2125",
+  "position": {
+    "x": 119.83759254836399,
+    "y": 64.810126582278485,
+    "z": 0,
+    "height": 577.1769763553857,
+    "width": 911.0102698829711
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Modelo Medidas"
+                    }
+                  },
+                  "Property": "Name"
+                }
+              },
+              "queryRef": "Modelo Medidas.Name",
+              "nativeQueryRef": "Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Modelo Medidas"
+                    }
+                  },
+                  "Property": "Description"
+                }
+              },
+              "queryRef": "Modelo Medidas.Description",
+              "nativeQueryRef": "Description"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "1987484f9801a9cbd799",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Modelo Medidas"
+              }
+            },
+            "Property": "Description"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "336e01fde90eb3253b99",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Modelo Medidas"
+              }
+            },
+            "Property": "Name"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "m",
+              "Entity": "Modelo Medidas",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "m"
+                          }
+                        },
+                        "Property": "Name"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Pendiente_b'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Tendencia_Estimada'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
