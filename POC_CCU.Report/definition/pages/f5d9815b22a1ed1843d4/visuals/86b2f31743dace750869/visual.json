@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "86b2f31743dace750869",
   "position": {
     "x": 10,
@@ -7,7 +7,7 @@
     "z": 0,
     "height": 172.5,
     "width": 1270,
-    "tabOrder": 5000
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "tableEx",
@@ -265,34 +265,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "050c6e00b6500b495948",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "IM"
-              }
-            },
-            "Property": "MANUF"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "a0dd59345b66113a20b3",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "IM"
-              }
-            },
-            "Property": "BRAND"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

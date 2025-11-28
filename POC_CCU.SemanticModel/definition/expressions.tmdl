@@ -32,11 +32,11 @@ expression 'Archivo de ejemplo' =
 expression 'Transformar archivo' =
 		let
 		    Origen = (Parámetro1 as binary) => let
-		        Origen = Excel.Workbook(Parámetro1, null, true),
-		        Hoja1_Sheet = Origen{[Item="Hoja1",Kind="Sheet"]}[Data],
-		        #"Encabezados promovidos" = Table.PromoteHeaders(Hoja1_Sheet, [PromoteAllScalars=true])
-		    in
-		        #"Encabezados promovidos"
+		    Origen = Excel.Workbook(Parámetro1, null, true),
+		    Hoja1_Sheet = Origen{[Item="Hoja1",Kind="Sheet"]}[Data],
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Hoja1_Sheet, [PromoteAllScalars=true])
+		in
+		    #"Encabezados promovidos"
 		in
 		    Origen
 	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar archivo de ejemplo""}" ]
@@ -107,11 +107,11 @@ expression 'Archivo de ejemplo (2)' =
 expression 'Transformar archivo (2)' =
 		let
 		    Origen = (Parámetro2 as binary) => let
-		        Origen = Excel.Workbook(Parámetro2, null, true),
-		        Hoja1_Sheet = Origen{[Item="Hoja1",Kind="Sheet"]}[Data],
-		        #"Encabezados promovidos" = Table.PromoteHeaders(Hoja1_Sheet, [PromoteAllScalars=true])
-		    in
-		        #"Encabezados promovidos"
+		    Origen = Excel.Workbook(Parámetro2, null, true),
+		    Hoja1_Sheet = Origen{[Item="Hoja1",Kind="Sheet"]}[Data],
+		    #"Encabezados promovidos" = Table.PromoteHeaders(Hoja1_Sheet, [PromoteAllScalars=true])
+		in
+		    #"Encabezados promovidos"
 		in
 		    Origen
 	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transformar archivo de ejemplo (2)""}" ]

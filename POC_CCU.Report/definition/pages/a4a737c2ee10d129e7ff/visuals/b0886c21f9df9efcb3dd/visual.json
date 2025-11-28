@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "b0886c21f9df9efcb3dd",
   "position": {
     "x": 713.75,
@@ -7,7 +7,7 @@
     "z": 2000,
     "height": 430,
     "width": 466.25,
-    "tabOrder": 1000
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "clusteredBarChart",

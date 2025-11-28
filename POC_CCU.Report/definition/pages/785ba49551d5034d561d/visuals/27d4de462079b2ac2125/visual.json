@@ -51,20 +51,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "1987484f9801a9cbd799",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Modelo Medidas"
-              }
-            },
-            "Property": "Description"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "336e01fde90eb3253b99",
         "field": {
           "Column": {
@@ -123,6 +109,13 @@
                           "Value": "'Var Target'"
                         }
                       }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Interseccion_a'"
+                        }
+                      }
                     ]
                   ]
                 }
@@ -130,6 +123,20 @@
             }
           ]
         }
+      },
+      {
+        "name": "9b343937969bd304d432",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Modelo Medidas"
+              }
+            },
+            "Property": "Description"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }
